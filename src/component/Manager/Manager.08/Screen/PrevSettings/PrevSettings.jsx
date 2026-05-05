@@ -1,21 +1,33 @@
-import React, { useState } from "react";
+/* import React, { useState } from "react"; */
+/* import useIsMobile from "../../z.Mobile/useIsMobile"; */
+/* import PrevControls from "../PrevControls"; */
+import TurnGridButton from "../../z.Mobile/TurnGridButton";
 import "./prevSettings.css";
+import SaveButton from "./SaveButton";
+import resetImage from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/reset.png";
+import cleanImage from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/clean.png";
 
-const PrevSettings = ({ handleClear, handleReset }) => {
+
+const PrevSettings = ({ handleClear, handleReset, orientation, setOrientation }) => {
+    /* const isMobile = useIsMobile (); */
+    
     return(
         <div className="prev-settings">
-        <button  onClick={handleClear}>
-            Clear Mirror
-        </button>
+            <div className="turn-grid">
+            <TurnGridButton orientation={orientation} setOrientation={setOrientation} />
+            </div>
+        <button  onClick={handleReset}> <img src={resetImage} className="reset-icon" /></button>
+        <button  onClick={handleClear}> <img src={cleanImage} className="clean-icon" /> </button>
+        
+        <div className="savebutton">
+                <SaveButton />
+            </div>
+       
 
-        <button  onClick={handleReset}>
-            Reset to Default
-        </button>
 
-        <button  style={{ color: 'white', background: '#ff8400'}}>
-            Save Changes
-        </button>
         </div>
+
+        
     )
 
 }

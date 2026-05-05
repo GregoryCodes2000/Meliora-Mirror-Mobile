@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../Manager.08/Screen/screen8.css";
+import SearchBar from "../y.Search_Bar/SearchBar";
 import PrevControls from "./PrevControls";
 import PreviewGrid from "./PreviewGrid";
 import PrevSettings from "./PrevSettings/PrevSettings";
+import SaveButton from "./PrevSettings/SaveButton";
 import ToggleSwitches from "./Switches";
 import Zoom from "./Zoom/Zoom";
 
 const Manager8 = () => {
   const [options, setOptions] = useState({
-    clock: true,  //default ON
-    weather: false,
-    calendar: false,
-    compliments: true,
+    clock: true, //default ON
+    weather: true,
+    calendar: true,
+    forecast:true,
+    praise: true,
     newsfeed: true,
   });
 
@@ -19,18 +22,33 @@ const Manager8 = () => {
     clock: false,
     weather: false,
     calendar: false,
-    compliments: false,
+    praise: false,
     newsfeed: false,
   });
 
+  /* const [stockModules, setStockModules] = useState([
+    { id: 1, symbol: "AAPL" },
+  ]) */
+  const [stockModules, setStockModules] = useState([{ id: 0, symbol: "AAPL" }]);
+
+  useEffect(() => {
+    setGridContent((prevGrid) => {
+      if (prevGrid.includes("stock-0")) return prevGrid; // Already added
+      return handleAddToGrid("stock-0") || prevGrid;
+    });
+  }, []);
+
   const [gridContent, setGridContent] = useState(() => {
     const grid = Array(42).fill(null);
-    grid[0] = "clock"; //place clock in first position
-    grid[17] = "compliments";
+    grid[0] = "clock";
+    grid[2] = "weather";
+    grid[3] = "calendar";
+    grid[5] = "forecast";
+    grid[20] = "praise";
     grid[26] = "newsfeed";
     return grid;
   });
-  const [orientation, setOrientation] = useState("horizontal");
+  const [orientation, setOrientation] = useState("vertical");
 
   const handleToggleChange = (event) => {
     const { name, checked } = event.target;
@@ -67,16 +85,21 @@ const Manager8 = () => {
     e.preventDefault(); // Allow drop by preventing default behavior
   };
 
-  const handleDrop = (e, index) => {
+  const handleDrop = (e, dropIndex) => {
     e.preventDefault();
+
     const draggedItem = e.dataTransfer.getData("draggedItem");
 
     setGridContent((prevGrid) => {
       const newGrid = [...prevGrid];
-      const currentIndex = newGrid.findIndex((item) => item === draggedItem);
+      const dragIndex = newGrid.findIndex((item) => item === draggedItem);
 
-      if (currentIndex !== -1) newGrid[currentIndex] = null; // Remove from old position
-      newGrid[index] = draggedItem; // Add to new position
+      if (dragIndex === -1) return newGrid;
+
+      // SWAP the two cells
+      const temp = newGrid[dropIndex];
+      newGrid[dropIndex] = newGrid[dragIndex];
+      newGrid[dragIndex] = temp;
 
       return newGrid;
     });
@@ -103,10 +126,10 @@ const Manager8 = () => {
       clock: false,
       weather: false,
       calendar: false,
-      compliments: false,
+      praise: false,
       newsfeed: false,
     });
-  
+
     /* setShowImageSection({
       clock: false,
       weather: false,
@@ -114,60 +137,83 @@ const Manager8 = () => {
       compliments: false,
       newsfeed: false,
     }); */
-  
+
     setGridContent(Array(42).fill(null));
   };
-  
+
   const handleReset = () => {
     // Reset toggle switches
     setOptions({
       clock: true,
-      weather: false,
-      calendar: false,
-      compliments: true,
+      weather: true,
+      calendar: true,
+      forecast: true,
+      praise: true,
       newsfeed: true,
     });
-  
+
     // Reset grid content
     setGridContent(() => {
       const grid = Array(42).fill(null);
       grid[0] = "clock"; // Default position
-      grid[17] = "compliments";
+      grid[2] = "weather";
+      grid[3] = "calendar";
+      grid[5] = "forecast";
+      grid[20] = "praise";
       grid[26] = "newsfeed";
+
       return grid;
     });
-  
-    
   };
-  
+
+  // ADD A MODULE TO FIRST EMPTY GRID CELL
+  const handleAddToGrid = (item) => {
+    setGridContent((prevGrid) => {
+      const newGrid = [...prevGrid];
+      const firstEmpty = newGrid.findIndex((cell) => cell === null);
+
+      if (firstEmpty !== -1) {
+        newGrid[firstEmpty] = item; // e.g. "stock-0"
+      }
+      return newGrid;
+    });
+  };
+
+  // REMOVE A MODULE FROM GRID
+  const handleRemoveFromGrid = (item) => {
+    setGridContent((prevGrid) =>
+      prevGrid.map((cell) => (cell === item ? null : cell))
+    );
+  };
 
   return (
     <div className="layout">
-      <div className="toggle-group">
-        <ToggleSwitches
-          options={options}
-          handleToggleChange={handleToggleChange}
-          handleGroupClick={handleGroupClick}
-          showImageSection={showImageSection}
-        />
-      </div>
       <div className="screen-control">
-        <PrevControls
-          orientation={orientation}
-          setOrientation={setOrientation}
-        />
+        <div className="toggle-group">
+          {/* <SearchBar /> */}
 
-        <Zoom
-          gridContent={gridContent}
-          orientation={orientation}
-          handleDragOver={handleDragOver}
-          handleDrop={handleDrop}
-          handleDragStart={handleDragStart}
-          handleDragEnd={handleDragEnd}
-        />
+          {
+            <ToggleSwitches
+              options={options}
+              handleToggleChange={handleToggleChange}
+              handleGroupClick={handleGroupClick}
+              showImageSection={showImageSection}
+              stockModules={stockModules}
+              setStockModules={setStockModules}
+              handleAddToGrid={handleAddToGrid}
+              handleRemoveFromGrid={handleRemoveFromGrid}
+            />
+          }
+        </div>
 
-        <div className="screen-content">
-          <PreviewGrid
+        <div className="top-section">
+          {/* <div> */}
+          <PrevControls
+            orientation={orientation}
+            setOrientation={setOrientation}
+          />
+
+          <Zoom
             gridContent={gridContent}
             orientation={orientation}
             handleDragOver={handleDragOver}
@@ -175,12 +221,58 @@ const Manager8 = () => {
             handleDragStart={handleDragStart}
             handleDragEnd={handleDragEnd}
           />
+          {/* </div> */}
+          <div className="screen-content">
+            <PreviewGrid
+              gridContent={gridContent}
+              orientation={orientation}
+              handleDragOver={handleDragOver}
+              handleDrop={handleDrop}
+              handleDragStart={handleDragStart}
+              handleDragEnd={handleDragEnd}
+              stockModules={stockModules}
+              options={options}
+            />
+          </div>
         </div>
 
         <div className="prev-settings-group">
-          <PrevSettings 
-          handleClear={handleClearMirror} 
-          handleReset={handleReset}/>
+          <PrevSettings
+            handleClear={handleClearMirror}
+            handleReset={handleReset}
+            orientation={orientation}
+            setOrientation={setOrientation}
+          />
+        </div>
+      </div>
+      <div className="mobile-control">
+        <div className="prev-settings-group-mobile">
+          {}{" "}
+          <PrevSettings
+            handleClear={handleClearMirror}
+            handleReset={handleReset}
+            orientation={orientation}
+            setOrientation={setOrientation}
+          />
+        </div>
+        <div className="toggle-group-mobile">
+          {/* <SearchBar /> */}
+
+          {
+            <ToggleSwitches
+              options={options}
+              handleToggleChange={handleToggleChange}
+              handleGroupClick={handleGroupClick}
+              showImageSection={showImageSection}
+              stockModules={stockModules}
+              setStockModules={setStockModules}
+              handleAddToGrid={handleAddToGrid}
+              handleRemoveFromGrid={handleRemoveFromGrid}
+            />
+          }
+        </div>
+        <div className="savebutton-mobile">
+          <SaveButton />
         </div>
       </div>
     </div>

@@ -3,54 +3,79 @@ import { NavLink } from "react-router-dom";
 //import "/home/kasm-user/Documents/4000_react_gri/05_Mirror_decor/decor/src/component/Manager/Manager.08/sidebar.css";
 import "./sidebar.css";
 import ThemeMode from "./ThemeMode";
-import browserImage from '/home/kasm-user/Documents/16_nav_mirr_github/08_nav_mirr_gh/src/assets/browser.png';
-import profileImage from '/home/kasm-user/Documents/16_nav_mirr_github/08_nav_mirr_gh/src/assets/profile_2.png';
+import browserImage from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/browser.png";
+import profileImage from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/profile_2.png";
+import logo from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/mir_logo.png";
 
 const Sidebar = ({ isMobile }) => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const toggleSettings = () => {
     setIsSettingsOpen(!isSettingsOpen);
-
-    
   };
 
   const [theme, setTheme] = useState("light");
 
+  
+
   return (
-    <div className="sidebar box-shadowed">
-      <div className="profile-button box-shadowed">
-        <img
-          src={profileImage}
-          alt="Profile"
-          className="profile-img"
-        />
-        <span>Profile</span>
-      </div>
+    <div className="sidebar">
+       <img src={logo} className="sidebar-logo" />
 
       <div className="sidebar-buttons-container">
-        
-        <NavLink to="/screen" className="sidebar-button box-shadowed" activeClassName="active">Screen</NavLink>
-        
-        <h3 className="bar-header">[Customize Modules]</h3>
-{/*         <NavLink to="/custom" className="sidebar-button" activeClassName="active">Customize</NavLink>
- */}        <NavLink to="/clock" className="sidebar-button box-shadowed" activeClassName="active">Clock</NavLink>
-        <NavLink to="/weather" className="sidebar-button box-shadowed" activeClassName="active">Weather</NavLink>
 
+      
+      
+      <NavLink
+          to="/profile"
+          className="profile-button"
+          activeClassName="active"
+        >
+        Profile
+        <img src={profileImage} alt="Profile" className="profile-img" />
+        </NavLink>
+  
+
+        <NavLink
+          to="/screen"
+          className="sidebar-button"
+          activeClassName="active"
+        >
+          Screen
+        </NavLink>
+        <h3 className="bar-header">[Customize Modules]</h3>
+        {/*         <NavLink to="/custom" className="sidebar-button" activeClassName="active">Customize</NavLink>
+         */}{" "}
+        <NavLink
+          to="/clock"
+          className="sidebar-button"
+          activeClassName="active"
+        >
+          Clock
+        </NavLink>
+        <NavLink
+          to="/weather"
+          className="sidebar-button"
+          activeClassName="active"
+        >
+          Weather
+        </NavLink>
         <h3 className="bar-header">[Quick Links]</h3>
-        <a className="sidebar-button box-shadowed">
+        <a className="sidebar-button">
           Website
           <img src={browserImage} className="browser-icon" />
         </a>
-       
-        
         
       </div>
+
+      <div className="logout">
+      <button  className="logout-btn">
+          log out
+        </button>
+        </div>
       {/* <div>
       <ThemeMode theme={theme} setTheme={setTheme} />
       </div> */}
-
-      
 
       {/* <div className="dropdown">
      

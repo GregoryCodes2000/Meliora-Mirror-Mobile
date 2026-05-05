@@ -54,8 +54,10 @@ body.dark .toggle-button {
     background-color: pink;
     transform: scale(0.95); /* Shrinks the whole container */
     object-fit: contain;
-    
+    display:none;
     margin-bottom: 0px;
     margin-left: 0rem;
   }
+   
+ 
 }

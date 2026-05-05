@@ -1,0 +1,43 @@
+
+  
+  .save-button {
+    color: white;
+    background: #ff8400;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  
+  
+ @media (max-width: 768px) {
+  .save-button {
+    border:none;
+    box-shadow: 4px 4px 8px #aaaaaa, -4px -4px 8px #ffffff;
+    background: #d4d2d2;
+   /*  padding: 5rem 0.2rem  */;
+    border-radius: 8px;
+   margin-right: 5px;
+    margin-top: 0px;
+    padding: 19px 0px;
+    height:9.5rem;
+    width: 2.5rem;
+/*   scale: 0.95;   
+ */    /* margin: 0rem auto; */
+   /*  width: 3.5rem; */
+    /* height: 4rem; */
+    justify-content: center;
+  align-items: center;
+  }
+
+
+  body.dark .save-button {
+    background-color: #4e4e4e;
+    box-shadow:
+    
+    inset -3px -3px 0px #393939,
+    -2px -2px 0px #626262;  }
+
+   
+    
+ }
+ 

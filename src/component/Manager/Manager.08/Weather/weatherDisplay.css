@@ -1,0 +1,93 @@
+.weather-mini {
+    width: 200px;
+    /* padding: 5px; */
+    color: white;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  /* --- TOP ROW --- */
+  .weather-top-row {
+    display: flex;
+    justify-content: space-evenly;
+    /* padding: 0 10px; */
+    font-size: 1.1rem;
+    opacity: 0.85;
+    gap:5px;
+  }
+  
+  .weather-wind {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    scale:130%;
+  }
+
+  .loc-val {
+    font-size: 16px;
+    font-weight: 600;
+ }
+
+ .weather-location {
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
+  gap: 2px;                  /* space between icon + text */
+  width: 100%;               /* ensures flex centering works */
+  text-align: center;
+}
+
+
+  .sun-icon {
+    margin-left: 5px;}
+  
+  .w-icon,
+  .sun-icon {
+    font-size: 1.5rem;
+    opacity: 0.85;
+  }
+
+
+  .wind-val,
+  .wind-dir {
+    font-size: 1rem;
+  }
+  
+  /* --- MID SECTION --- */
+  .weather-mid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; 
+    margin-bottom: 0;
+  }
+  
+  .sky-icon {
+    font-size: 3.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sky-icon svg {
+    display: block;
+  }
+  
+  .big-temp {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1;
+  }
+  
+  /* --- BOTTOM TEXT --- */
+  .weather-bottom {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  

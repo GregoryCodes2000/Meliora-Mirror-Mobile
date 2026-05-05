@@ -1,72 +1,127 @@
 .prev-settings {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-   /*  margin-left: 1rem; */
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-start;
+  /* Optional wrapping for horizontal layouts */
+  flex-wrap: wrap;
+  /* Optional: center buttons on wider screens too */
+  align-items: flex-start;
+}
+
+.prev-settings button {
+  padding: 14px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #e0e0e0;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  width: 10rem;
+  box-shadow: 4px 4px 8px #aaaaaa, -4px -4px 8px #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; /* Reset margin to avoid right shift */
+  height: 3rem;
+}
+
+.prev-settings button:hover {
+  background-color: #ff8400;
+  color: white;
+}
+
+.prev-settings button:active {
+  background: #d1d1d1;
+  box-shadow: inset 2px 2px 4px #aaaaaa, inset -2px -2px 4px #ffffff;
+}
+
+/* Dark mode styling */
+body.dark .prev-settings button {
+  background-color: #4e4e4e;
+  color: #fff;
+  box-shadow: 2px 2px 2px #242424, -2px -2px 2px #6c6c6c;
+}
+
+body.dark .prev-settings button:hover {
+  background-color: #974848;
+}
+
+body.dark .prev-settings button:active {
+  background-color: #974848;
+  box-shadow: -2px -2px 2px #242424, 2px 2px 2px #6c6c6c;
+}
+
+.turn-grid {
+  display:none;
+}
+.reset-icon {
+  scale: 15%;
+ }
+
+ .clean-icon {
+  scale: 15%;
+ }
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+  .prev-settings {
+    align-items: center;
+    /* width: 100%; */
     
-    /* background: green; */
+    flex-direction:column;
+    gap: 0.5rem;
+    display:flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;  
+    margin-top: 0px;
+   /*  padding: 19px 0px; */
+  /*   height:100%; */
+    /* background-color: #ae4d6a; */
+    width: 4.1rem;
   }
   
+
   .prev-settings button {
-    padding: 14px 20px;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: none;
-    background-color:  #e0e0e0;
-    color: black;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width:10rem;
-    box-shadow: 4px 4px 8px #aaaaaa, -4px -4px 8px #ffffff;
-    margin-left:10px;
-  }
-
-  body.dark .prev-settings button {
-    background-color: #4e4e4e;
-    box-shadow: 2px 2px 2px #242424, -2px -2px 2px  #6c6c6c;
-    color: #fff;
-  }
+   /*  padding: 10px 7px; */
+   /*  font-size: 0.7rem; */
+    /* width: clamp(5rem, 40vw, 10rem); */
+    /* margin: 0rem auto; */
+    width:2rem;
+    justify-content: center;
+  align-items: center;
+  height:45px;
   
-  .prev-settings button:hover {
-    background-color: #ff8400;
-    color:white;
-  }
-  
-  .prev-settings button:active {
-    background: #d1d1d1;
-    box-shadow: inset 2px 2px 4px #aaaaaa, inset -2px -2px 4px #ffffff;
-  }
+/*   scale: ;
 
-  body.dark .prev-settings button:active {
-    background-color: #974848;
-    box-shadow: -2px -2px 2px #242424, 2px 2px 2px  #6c6c6c;
-    color: #fff;
+ */  }
+
+ /* body.dark .prev-settings button {
+  background-color: #4e4e4e;
+  box-shadow:
+  inset 2px 2px 2px #909090,
+  inset -2px -2px 2px #252525,
+  -3px 3px 8px #4e4e4e;  } */
+
+
+  .turn-grid {
+    display:flex;
     
   }
 
-  .prev-settings button {
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+ .clean-icon {
+  scale: 12%;
+ }
+
+ .reset-icon {
+  scale: 12%;
+ }
+
+  .savebutton {
+    display:none;
+    scale:12%;
   }
   
-  body.dark .prev-settings button:hover {
-    background-color: #974848;
-   
-    
-  }
 
-  @media (max-width: 768px) {
-    .prev-settings button {
-      padding: 7px 10px;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: none;
-      background-color:  #e0e0e0;
-      color: black;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      width:5rem;
-      box-shadow: 4px 4px 8px #aaaaaa, -4px -4px 8px #ffffff;
-      margin-left:10px;
-    }
-  }
+}

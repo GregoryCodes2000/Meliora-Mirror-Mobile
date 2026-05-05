@@ -1,6 +1,7 @@
 /* mobileFooter.css */
 .mobile-footer {
     display: none; /* Hide by default */
+    
   }
   
   @media (max-width: 768px) {
@@ -9,22 +10,102 @@
       justify-content: space-around;
       align-items: center;
       position: fixed;
-      bottom: 0;
+      /* bottom: 0; */
+      top:0;
+      /* display:none; */
       left: 0;
       right: 0;
-      background: #f0f0f0;
-      padding: 10px;
+      background: #e0e0e0;
+      padding: 0px;
+      height:38px;
       z-index: 1000;
-      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+      gap:15rem;
+      box-shadow: 0px 4px 4px #b8b8b8, 0px 0px 0px #600d0d;
+width:100%;
+
     }
+
+   /*  .mobile-logo {
+      margin-right: 5px;
+    }
+ */
+    body.dark .mobile-footer {
+      background-color: #4e4e4e;
+      color: #fff;
+      box-shadow: 2px 2px 2px #242424, -2px -2px 2px #6c6c6c;
+    }
+
+    .mobile-footer-wrapper {
+      position: fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+      z-index: 10;
+      
+    }
+
+    /* .mobile-footer-wrapper.shifted {
+      transform: translateX(var(--sidebar-width));
+    } */
+
+   /*  .mobile-footer.shifted {
+      transform: translateX(var(--sidebar-width))
+    } */
+
+    .hamburger {
+      display: flex;
+      padding:0px;
+      border:none;
+      margin-bottom:17px;
+      background: transparent;
+      left:1rem;
+      color: #8e8e8e;
+      
+    }
+
+    /* .mobile-footer.shifted {
+      transform: translateX(215px)
+    } */
+
+    
   
+.mobile-sidebar {
+  width:200px;
+ position: fixed;
+
+}
+
+
+
+
+
     .icon-button {
       background: none;
       border: none;
       font-size: 16px;
-      padding: 10px;
+      padding: 0px;
       cursor: pointer;
     }
+
+    .mobile-layout {
+      display:flex;
+      flex-direction: row;
+      width:100%;
+    }
+
+    .mobile-sidebar {
+      width: 60px;
+    }
+
+    .mobile-logo {
+      position: absolute;
+     /*  border: 1px solid #000000;
+border-radius: 50px; */      
+scale: 15%;
+      /* background: #000; */
+    }
+    
+   
   }
   
   .module-popup {
@@ -32,7 +113,7 @@
     bottom: 60px;
     left: 0;
     right: 0;
-    background: white;
+    background: rgb(82, 29, 29);
     display: flex;
     justify-content: center;
     gap: 10px;

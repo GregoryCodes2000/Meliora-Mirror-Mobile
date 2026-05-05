@@ -1,0 +1,19 @@
+.newsfeed{
+    color:white;
+    font-family: Helvetica, Arial, sans-serif;
+    width:100%;
+  }
+  
+  .news-source{
+    font-size:28px;
+    opacity:0.6;
+    margin-bottom:5px;
+  }
+  
+  .news-headline{
+    font-size:48px;
+    font-weight:300;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }

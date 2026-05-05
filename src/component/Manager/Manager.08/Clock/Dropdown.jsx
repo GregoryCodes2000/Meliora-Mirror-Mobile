@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./dropdown.css";
 
 const Dropdown = ({ options, selectedValue, onChange }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handleSelect = (option) => {
     onChange(option);

@@ -1,0 +1,77 @@
+.ttc-wrapper {
+    width: 100%;
+    background: #fdd835; /* TTC yellow */
+    padding: 14px;
+    box-sizing: border-box;
+  }
+  
+  .ttc-card {
+    background: #ffe066;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    line-height: 1.45;
+    color: #333;
+  }
+  
+  .ttc-heading {
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .ttc-category {
+    color: #6a5200;
+  }
+  
+  .ttc-line-badge {
+    background: #ffcc00;
+    color: black;
+    font-weight: 700;
+    border: 2px solid #ffcc00;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .ttc-line-name {
+    font-weight: 700;
+    color: #6a5200;
+  }
+  
+  .ttc-description {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+  }
+  
+  .ttc-divider {
+    width: 100%;
+    height: 1px;
+    background: #e0c75f;
+    margin-top: 20px;
+  }
+  
+  .ttc-loading,
+  .ttc-error,
+  .ttc-empty {
+    font-size: 16px;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .ttc-alert-text {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 1rem;
+  }

@@ -1,0 +1,16 @@
+.time-display {
+    width: 35rem;
+    height: 10rem;
+  
+    display: flex;               /* ← REQUIRED */
+    justify-content: center;     /* center horizontally */
+    align-items: center;         /* center vertically */
+  
+    color: white;
+    font-weight: 300;
+    font-size: 3rem;
+    font-family: "Roboto", sans-serif;
+
+    letter-spacing: 1px;
+    text-align: center;
+  }

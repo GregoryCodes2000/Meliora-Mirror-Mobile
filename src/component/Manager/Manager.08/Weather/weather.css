@@ -24,13 +24,13 @@ body.dark .weather-container {
   display:block;
   text-align: left;
   width: 19rem;
-  height: 9rem;
+  height: 8rem;
   text-align: center;
 /*   background-color: #222;
  */  background-color: rgb(0, 0, 0);
   border-radius: 15px;
   box-shadow: -3px -3px 5px 2px #818181, 3px 3px 2px 2px #ffffff;
-
+margin-top: 2px;
 }
 
 body.dark .weather-displays {
@@ -54,15 +54,15 @@ body.dark .weather-displays {
 .location-input input {
   padding: 0.5rem;
   border-radius: 5px;
- /*  border: 1px solid #ccc; */
+
  border: none;
-  background-color: rgb(173, 172, 172);
-  color: white;
-  width: 14rem;
+  background-color: rgb(195, 195, 195);
+  color: rgb(128, 128, 128);
+  width: 95%;
   font-size: 1rem;
-  box-shadow: -3px -2px 3px #818181, 2px 2px 3px #ffffff;
-  
+  box-shadow: -2px -2px 2px #818181, 2px 2px 2px #ffffff;
 }
+
 
 body.dark .location-input input {
   background-color: #4e4e4e;
@@ -98,7 +98,7 @@ body.dark .suggestions {
 }
 
 .suggestions li:hover {
-  background-color: #ff9e37;
+  background-color: #5a5a5a;
 }
 
 
@@ -128,3 +128,105 @@ body.dark .suggestions {
 }
 
 p {margin:-4px} 
+
+
+@media (max-width: 768px) {
+  .weather-container {
+    font-family: Arial, sans-serif;
+    box-shadow: /* inset */ 4px 4px 8px #aaaaaa, -2px -2px 2px #ffffff;
+    
+        padding: 17px;
+     width: 19rem;
+    height: 25rem;
+    border-radius: 10px;
+    /* display: flex; */
+    display: grid;
+   
+    gap: 0rem;
+   /*  padding: 20px; */
+     margin: 40px 30px 0px;
+     justify-items: center; /* centers horizontally */
+     /* centers vertically */
+   text-align: center;  
+   /* background: #4a7daf; */
+   justify-content: center;
+   }
+
+   .weather-displays {
+  margin-top: -1px;
+  display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
+ .location-input label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgb(144, 144, 144);
+}
+
+
+.location-input {
+  text-align: left;
+  order: 2;
+  margin-bottom: 9rem;
+  justify-content: center;
+}
+
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(173, 172, 172);
+  border-radius: 5px;
+  margin-top:4px;
+  color:white;
+  top: 74%;
+
+  width: 15rem;
+}
+ 
+}
+
+.weatherscreen{
+  scale: 120%;
+  margin: 1rem 3rem 0rem;
+}
+
+
+.location-input {
+  width: 100%; 
+  margin-bottom: 160px;
+  position: relative; /* REQUIRED so absolute suggestions don’t move input */
+}
+
+.input-wrapper {
+  width:100%;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  /* top: 100%;   */        /* place directly under input */
+  left: 0;
+  margin-top:1px;
+  width: 99%;
+  list-style: none;
+  /* margin: 6px 0 0 0; */
+  padding: 5px;
+ /*  background: rgba(135, 135, 135, 0.6); */
+  border-radius: 5px;
+/*   border: 1px solid #333;
+ */  max-height: 160px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.suggestion-item{
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+/*   border: px solid #333;
+ */  box-shadow: /* inset */ 4px 4px 8px #aaaaaa, -2px -2px 2px #ffffff;
+  background: #d7d7d7;
+}

@@ -1,0 +1,72 @@
+.lcd-clock {
+    display: flex;
+   /*  flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #003300 10%, #001a00 90%);
+    border-radius: 10px;
+  /*   padding: 20px; */
+   /*  width: 300px; */
+    /* height: 160px; */
+    box-shadow:
+      inset 0 0 10px #00ff00,
+      0 0 20px rgba(0, 255, 0, 0.4);
+    color: #00ff00;
+    font-family: "Orbitron", monospace;
+    
+  }
+  
+  .lcd-border {
+    
+    border: 3px solid #00ff00;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+      0 0 5px #00ff00,
+      inset 0 0 20px rgba(0, 255, 0, 0.1);
+  }
+  
+  .lcd-date {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .lcd-time {
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-shadow:
+      0 0 5px #00ff00,
+      0 0 15px #00ff00,
+      0 0 30px #00ff00;
+
+      flex-shrink: 0;
+      display:block;
+      text-align: left;
+      width: 17.5rem;
+     /* margin-bottom: 5rem; */
+     
+  }
+  
+  .lcd-seconds {
+    font-size: 2.8rem;
+    /* margin-left: 5px; */
+    opacity: 0.7;
+    min-width:85px;
+  }
+  
+  .lcd-meridiem {
+    font-size: 1.2rem;
+    margin-left: 5px;
+    opacity: 0.8;
+  }
+  

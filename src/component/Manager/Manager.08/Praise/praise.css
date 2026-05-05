@@ -1,0 +1,17 @@
+.praise-container {
+    width: 35rem;
+    height: 10rem;
+  
+    display: flex;               /* ← REQUIRED */
+    justify-content: center;     /* center horizontally */
+    align-items: center;         /* center vertically */
+  
+    color: white;
+    font-weight: 300;
+    font-size: 2rem;
+  
+    letter-spacing: 1px;
+    text-align: center;
+    font-family:sans-serif;
+    font-family: "Roboto", sans-serif;
+  }

@@ -12,6 +12,35 @@
     
     
     padding:12px;
+    
+
+    
+    width: 12rem;
+    
+    gap: 2px; 
+    /* padding: 12px; */
+  }
+/* 
+  .sidebar-logo {
+    width: 10%;
+} */
+
+  
+.profile-img {
+  scale: 90%;
+}
+  
+  
+  .profile-button {
+    margin-top: 10px;
+   
+  }
+
+  @media (max-width: 768px) {
+    .top-right-logo {
+      display:none;
+
+    }
    
   }
 
@@ -34,7 +63,7 @@
   .profile-button {
     font-size: 1rem;
     cursor: pointer;
-    padding: 15px;
+    padding: 5px;
     display: flex;
     align-items: center;
     
@@ -72,7 +101,7 @@
 
  body.dark .profile-img {
   background-color: #4e4e4e;
-  box-shadow: -4px -4px 8px #2f2f2f, 2px 2px 4px  #767676;
+  box-shadow: -2px -2px 4px #2f2f2f, 2px 2px 4px  #767676;
   color: #fff;
 }
   
@@ -151,10 +180,79 @@
     color:white;
   }
 
+  @media (max-width: 768px) {
+
+    .sidebar {
+      /* position: fixed; */
+     
+    display: flex;
+    flex-direction: column;
+
+   
+  }
+
+  .profile-button {
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0px;
+    display: row;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+   
+    gap: 55px; /* Space between the image and text */
+    margin-bottom: -6px;
+    background: #e6e4e4;
+    border-radius: 10px;
+    box-shadow: /* inset */ 1px 1px 1px #aaaaaa, -2px -2px 2px #ffffff;
+    transition: 0.9s all ease;
+    margin-top: 2.2rem;
+    padding: 3px;
+    color:#000000;
+    text-decoration: none;
+  }
+  
+ 
+  .sidebar-logo {
+    display: none;
+  }
+
+ .sidebar-buttons-container {
+  gap: 5px;
+  margin-top: 0rem;
+ }
+
+ .profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: -2px -2px 4px #aaaaaa, 2px 2px 4px #ffffff;
+  margin-left:0px;
+  background-color: #959595;
+ }
+
+ .logout {
+  display: grid;
+ margin-top: 13rem;
+ }
+
+ .logout-btn {
+padding: 10px;
+background: #e6e4e4;
+    border-radius: 8px;
+    box-shadow: /* inset */ 2px 2px 2px #aaaaaa, -2px -2px 2px #ffffff;
+        color:#000000;
+    text-decoration: none;
+    border: none;
+ }
+
+ 
+  }
 
   
   
-  
+   
   
   /*------------------ SETTINGS BUTTON ---------------------*/
   /* .dropdown-button {

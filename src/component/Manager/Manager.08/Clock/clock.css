@@ -1,5 +1,5 @@
 .time-zone {
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   box-shadow: /* inset */ 4px 4px 8px #aaaaaa, -2px -2px 2px #ffffff;
   background: #d7d7d7;
   
@@ -29,7 +29,7 @@ body.dark .time-zone {
 .time-zone-label {
   font-size: 1rem;
   color: rgb(144, 144, 144);
-
+left:0;
 }
 
 .time-display {
@@ -55,14 +55,15 @@ body.dark .time-border{
 }
 
 .time-display .date {
-  font-size: 1.5rem;
+  font-size: 20px;
+  font-weight: 600;
   color: #ccc;
   margin-bottom: 0rem;
 }
 
 .time-display .clock {
-  font-size: 4rem;
-  font-weight: bold;
+  font-size: 3.5rem;
+  font-weight: medium;
   color: white;
   display: flex;
   align-items: baseline;
@@ -71,25 +72,21 @@ body.dark .time-border{
 .time-display .clock .seconds {
   font-size: 1.5rem;
   opacity: 0.6;
-  margin-left: 0.2rem;
+  /* margin-left: 0.2rem; */
   position: relative;
-  top: -30px; /* Moves it slightly up */
+  bottom: 22px; /* Moves it slightly up */
+
 }
 
 
-.time-format-buttons {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+
 
 .time-format-buttons button {
   background: #e0e0e0;
   border: none;
   border-radius: 10px;
-  padding: 10px 20px;
-  margin: 0 5px;
+  /* padding: 10px 20px; */
+  /* margin: 0 5px; */
   cursor: pointer;
   box-shadow: 2px 2px 4px #aaaaaa, -2px -2px 4px #ffffff;
   transition: 0.2s all ease;
@@ -117,8 +114,8 @@ body.dark .time-format-buttons button.active {
 }
 
 .meridiem {
-  font-size: 0.6em;
-  margin-left: 4px;
+  font-size: 2rem;
+  /* margin-left: 4px; */
   vertical-align: super;
   opacity: 0.8;
 }
@@ -239,6 +236,109 @@ body.dark .tz-select__single-value {
   color: #ffffff !important;
 }
 
+/* Default (desktop) layout stays side by side */
+.time-zone {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+/* On small screens, stack vertically */
+/* Mobile layout: stack and put TZ selector under color picker */
+@media (max-width: 768px) {
+  .time-zone {
+    display: grid;
+    grid-template-areas:
+      "time"
+      "colors"
+      "tz";
+    /* gap: 1rem; */
+    width: 85% ;
+    height: 31rem;
+/*     margin: 16px;
+ */    padding: 5.5px;
+    margin: 40px 30px 0px;
+    justify-items: center; /* centers horizontally */
+      /* centers vertically */
+    text-align: center;  
+   /*  background: #4a7daf; */
+    justify-content: center;
+  }
+
+ /*  .time-zone-label {
+    font-size: 1rem;
+    color: rgb(144, 144, 144);
+    justify-items: left;
+  } */
+
+  .border {
+    border-radius: 15px;
+    
+  }
+
+ 
+  .time-format-buttons button {
+    width:9rem;
+  }
+
+  .time-format-buttons {
+    /* margin-top: 10px; */
+    display: flex;
+ 
+    justify-content: center;
+    margin-top: -6.5rem;
+   font: black;
+/*   width:18rem;
+ */  height:35%;
+     /* justify-content: center; */
+     gap: 10px;
+  }
+
+ 
+ 
+  .selector {
+    margin-top: -11.5rem;
+   text-align: left;
+   width: 100%;
+   /* margin-left:  1rem; */
+   /* background: #650c0c; */
+  }
+
+  .display{
+   /*  background: #066839; */
+  }
+  
+  .time-display {
+    /* flex-shrink: 0;
+    display:block;
+    text-align: left;
+    width: 19rem;
+   scale: 100%;
+   padding: none; */
+   /* margin: 4px 0px 0; */
+   border-radius: 15px;
+   box-shadow: -2px -2px 2px 2px #818181, 2px 2px 2px 2px #ffffff;
+   margin-top: 10px;
+   width: 19rem;
+
+   
+  }
+  
+  .time-border {
+    background-color: #000000;
+    border-radius: 15px;
+    padding: 20px;
+    /* box-shadow: -3px -3px 5px 2px #ffffff, 3px 3px 2px 2px #563636; */
+    
+  }
+
+  .time-display { grid-area: time; margin-bottom: 0 !important; }
+  .color-picker-wrapper { grid-area: colors; }
+  .tz-select-container { grid-area: tz; margin: 0; }
+  .selector { margin-bottom: 0 !important; } /* keep it from pushing things */
+}
+
+
 
 /* ------------------------------- Scroll Bar: Light----------------------------------------- */
 /* .tz-select__menu-list {
@@ -281,3 +381,40 @@ body.dark .tz-select__menu-list::-webkit-scrollbar-thumb {
 body.dark .tz-select__menu-list::-webkit-scrollbar-track {
   background: #2a2a2a;
 } */
+
+
+
+
+
+.timestyles {
+
+  
+  box-shadow: /* inset */ 4px 4px 8px #aaaaaa, -2px -2px 2px #ffffff;
+  background: #000000;
+  
+  width: 40.3rem;
+  height: 25rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between; /* Optional: adds space between the divs */
+  gap: 2.5rem; /* Adds space between the divs */
+  padding: 20px;
+  margin: -10px 30px 0px;
+}
+
+.timezone-select {
+  padding: 0.5rem;
+  border-radius: 5px;
+
+ border: none;
+  background-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  width: 95%;
+  font-size: 1rem;
+  box-shadow: -2px -2px 2px #818181, 2px 2px 2px #ffffff;
+}
+
+.option {
+  box-shadow: -2px -2px 2px #818181, 2px 2px 2px #ffffff;
+
+}

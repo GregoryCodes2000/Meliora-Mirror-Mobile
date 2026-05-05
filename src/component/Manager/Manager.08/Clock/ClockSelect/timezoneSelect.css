@@ -1,0 +1,84 @@
+.tz-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .tz-input-box {
+    display: flex;
+    align-items: center;
+    /* background: #000;
+    border: 1px solid #555;
+    padding: 10px;
+    border-radius: 8px; */
+    cursor: text;
+margin-top: 7px;
+    padding: 0.3rem;
+  border-radius: 5px;
+
+ border: none;
+  background-color: rgb(195, 195, 195);
+  color: rgb(0, 0, 0);
+ /*  width: 94%; */
+  font-size: 1rem;
+  box-shadow: -2px -2px 2px #818181, 2px 2px 2px #ffffff;
+  }
+  
+  .tz-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    outline: none;
+  }
+  
+  .tz-arrow {
+    color: rgb(152, 152, 152);
+    font-size: 1.1rem;
+    pointer-events: none;
+  }
+  
+  .tz-dropdown {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    right: 0;
+    /* background: #111;
+    border: 1px solid #444; */
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 999;
+    animation: fadeIn 0.15s ease-out;
+    padding: 2px;
+  }
+  
+  .tz-option {
+   /*  padding: 10px 12px;
+    cursor: pointer;
+    color: white; */
+
+    padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+/*   border: px solid #333;
+ */  box-shadow: /* inset */ 4px 4px 8px #aaaaaa, -2px -2px 2px #ffffff;
+  background: #d7d7d7;
+  width: 96.5%;
+  }
+  
+  .tz-option:hover,
+  .tz-option.highlighted {
+    /* background: #333; */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-3px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
