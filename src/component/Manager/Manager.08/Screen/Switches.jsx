@@ -7,7 +7,7 @@ import StockDisplay from "../Stock/StockDisplay";
 import StocksManager from "../Stock/StockManager";
 import ForecastDisplay from "../Weather/Forecast/ForecastDisplay";
 import WeatherDisplay from "../Weather/WeatherDisplay";
-import settingsImage from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/gear.png";
+import settingsImage from "./../../../../assets/gear.png";
 
 import { Link } from "react-router-dom";
 import "./switches.css";
