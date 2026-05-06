@@ -182,11 +182,11 @@ const ToggleSwitches = ({
               </div>
             ) : (
               // Default PNG image for modules
-              <img
+              {/* <img
                 src={require(`/home/kasm-user/Documents/4000_react_gri/05_Mirror_decor/decor/src/component/Manager/${item}.png`)}
                 alt={item}
                 className={`toggle-image ${item}`}
-              />
+              /> */}
             )}
           </div>
         )}
