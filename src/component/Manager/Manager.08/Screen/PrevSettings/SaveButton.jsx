@@ -1,5 +1,7 @@
+
+
 import "./saveButton.css";
-import saveImage from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/save_img.png";
+import saveImage from "./../../../../../assets/save_img.png";
 
 const SaveButton = () => {
     return (

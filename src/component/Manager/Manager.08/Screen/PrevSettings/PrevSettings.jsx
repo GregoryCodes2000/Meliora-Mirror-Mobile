@@ -4,8 +4,8 @@
 import TurnGridButton from "../../z.Mobile/TurnGridButton";
 import "./prevSettings.css";
 import SaveButton from "./SaveButton";
-import resetImage from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/reset.png";
-import cleanImage from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/clean.png";
+import resetImage from "./../../../../../assets/reset.png";
+import cleanImage from "./../../../../../assets/clean.png";
 
 
 const PrevSettings = ({ handleClear, handleReset, orientation, setOrientation }) => {
