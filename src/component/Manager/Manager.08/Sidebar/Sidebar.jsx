@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 //import "/home/kasm-user/Documents/4000_react_gri/05_Mirror_decor/decor/src/component/Manager/Manager.08/sidebar.css";
 import "./sidebar.css";
 import ThemeMode from "./ThemeMode";
-import browserImage from "../../../../assets/browser.png";
-import profileImage from "../../../../assets/profile_2.png";
+import browserImage from "./browser.png";
+import profileImage from "./profile_2.png";
 import logo from "../../../../assets/mir_logo.png";
 
 const Sidebar = ({ isMobile }) => {

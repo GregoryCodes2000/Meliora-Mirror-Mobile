@@ -1,5 +1,8 @@
+
+
+
 import React, { useState } from "react";
-import profileIcon from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/profile.png";
+import profileIcon from "./profile_2.png";
 import "./profile.css";
 
 const Profile = () => {
