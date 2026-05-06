@@ -1,6 +1,8 @@
 // TurnGridButton.jsx
 import React from "react";
-import turngridImage from "/home/kasm-user/Documents/21_nav_mirr/08_nav_mirr_gh/src/assets/turngrid.png";
+
+
+import turngridImage from "./../../../../assets/turngrid.png";
 import "./turnGrid.css"
 /* import "./turnGridButton.css";  */
 
