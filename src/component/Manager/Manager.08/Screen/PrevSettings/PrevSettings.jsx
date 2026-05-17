@@ -16,8 +16,8 @@ const PrevSettings = ({ handleClear, handleReset, orientation, setOrientation })
             <div className="turn-grid">
             <TurnGridButton orientation={orientation} setOrientation={setOrientation} />
             </div>
-        <button  onClick={handleReset}> <img src={resetImage} className="reset-icon" /></button>
-        <button  onClick={handleClear}> <img src={cleanImage} className="clean-icon" /> </button>
+        <button  onClick={handleReset}> <img src={resetImage} className="reset-icon" alt="reset"/></button>
+        <button  onClick={handleClear}> <img src={cleanImage} className="clean-icon" alt="clean"/> </button>
         
         <div className="savebutton">
                 <SaveButton />
