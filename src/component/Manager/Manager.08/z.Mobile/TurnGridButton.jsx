@@ -14,7 +14,7 @@ const TurnGridButton = ({ orientation, setOrientation }) => {
   return (
     <button className="turn-grid-button" onClick={toggleOrientation}>
       {/* Turn Grid */}
-      <img src={turngridImage} className="turngrid-icon" />
+      <img src={turngridImage} className="turngrid-icon" alt="" />
     </button>
   );
 };
