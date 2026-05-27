@@ -6,12 +6,21 @@ import ThemeMode from "../Sidebar/ThemeMode";
 import Sidebar from "../Sidebar/Sidebar";
 import MobileTheme from "./MobileTheme";
 import logo from "../../../../assets/mobile_logo.png";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const MobileHeader = ({ hamburgerOpen, setHamburgerOpen, theme, setTheme }) => {
   const navigate = useNavigate();
   const isMobile = window.innerWidth < 768;
   /* const theme = "light"; */
+  const location = useLocation();
 
+  useEffect(() => {
+    // Close hamburger on ANY navigation
+    if (hamburgerOpen) {
+      setHamburgerOpen(false);
+    }
+  }, [location.pathname]); // Fires every time user clicks a sidebar button
   return (
     <>
       <div className="mobile-footer-wrapper">

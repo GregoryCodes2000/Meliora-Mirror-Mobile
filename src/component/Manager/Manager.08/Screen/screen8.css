@@ -177,5 +177,22 @@ body.dark .box-shadowed {
 
   
   /* ---------------------- */
- 
+  @media (max-width: 768px) {
+    .switch-group-test {
+      position: fixed;          /* sits over everything */
+      bottom: 0;                /* at bottom of screen */
+      left: 0;
+      width: 100%;
+      z-index: 99999;           /* above preview window */
+      background: rgba(0, 0, 0, 0.9);
+  
+      transform: translateY(100%);   /* start hidden */
+      transition: transform 0.35s ease;
+      padding: 1rem;
+    }
+  
+    .switch-group-test.open {
+      transform: translateY(0);      /* slide into view */
+    }
+  }
 }

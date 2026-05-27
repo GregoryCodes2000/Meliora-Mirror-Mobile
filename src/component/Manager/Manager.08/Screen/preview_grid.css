@@ -85,7 +85,7 @@ body.dark .preview-window {
   grid-template-rows: repeat(14, 1fr);
 
   width: 400px;
-  height: 540px;
+  height: 610px;
   position: relative;
   left: 5.5rem;
   margin-right: 11.2rem;
@@ -244,6 +244,14 @@ min-width: 378px;
   
     border: 10px solid #686868;
   }
+  .stock-preview {
+    width:35rem;
+    height:100%;
+    display:flex;
+    scale:20%;
+    margin-top: -22px;
+  }
+
 }
 
 
@@ -432,7 +440,7 @@ img.toggle-image {
   width:35rem;
   height:100%;
   display:flex;
-  scale:20%;
+  scale:30%;
   margin-top: -22px;
 }
 

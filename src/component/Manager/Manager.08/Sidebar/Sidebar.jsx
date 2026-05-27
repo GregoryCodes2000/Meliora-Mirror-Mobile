@@ -5,9 +5,12 @@ import "./sidebar.css";
 import ThemeMode from "./ThemeMode";
 import browserImage from "./browser.png";
 import profileImage from "./profile_2.png";
+import screenIcon from "../../../../assets/screenicon.png";
+import clockIcon from "../../../../assets/clockicon.png";
+import weatherIcon from "../../../../assets/weathericon.png";
 import logo from "../../../../assets/mir_logo.png";
 
-const Sidebar = ({ isMobile }) => {
+const Sidebar = ({ isMobile  }) => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const toggleSettings = () => {
@@ -15,7 +18,8 @@ const Sidebar = ({ isMobile }) => {
   };
 
   const [theme, setTheme] = useState("light");
-
+ 
+ 
   
 
   return (
@@ -28,8 +32,10 @@ const Sidebar = ({ isMobile }) => {
       
       <NavLink
           to="/profile"
-          className="profile-button"
-          activeClassName="active"
+          className={({ isActive }) =>
+    "profile-button" + (isActive ? " active" : "")
+  }
+        
         >
         Profile
         <img src={profileImage} alt="Profile" className="profile-img" />
@@ -38,33 +44,49 @@ const Sidebar = ({ isMobile }) => {
 
         <NavLink
           to="/screen"
-          className="sidebar-button"
-          activeClassName="active"
-        >
-          Screen
+          className={({ isActive }) =>
+    "sidebar-button" + (isActive ? " active" : "")
+  }
+         
+        ><div className="label">
+          Screen</div>
+          <img src={screenIcon} alt="screen" className="screen-icon" />
         </NavLink>
         <h3 className="bar-header">[Customize Modules]</h3>
         {/*         <NavLink to="/custom" className="sidebar-button" activeClassName="active">Customize</NavLink>
          */}{" "}
         <NavLink
           to="/clock"
-          className="sidebar-button"
-          activeClassName="active"
-        >
-          Clock
+          className={({ isActive }) =>
+    "sidebar-button" + (isActive ? " active" : "")
+  }
+         
+        ><div className="label">
+          Clock</div>
+          <img src={clockIcon} alt="clock" className="clock-icon" />
         </NavLink>
         <NavLink
           to="/weather"
-          className="sidebar-button"
-          activeClassName="active"
-        >
-          Weather
+          className={({ isActive }) =>
+    "sidebar-button" + (isActive ? " active" : "")
+  }
+          
+        ><div className="label">
+          Weather</div>
+          <img src={weatherIcon} alt="weather" className="weather-icon" />
         </NavLink>
         <h3 className="bar-header">[Quick Links]</h3>
-        <a className="sidebar-button">
-          Website
+        <NavLink
+         to="/website"
+         className={({ isActive }) =>
+         "sidebar-button" + (isActive ? " active" : "")
+       }
+          
+        >
+        <div className="label">
+          Website</div>
           <img src={browserImage} className="browser-icon" />
-        </a>
+          </NavLink>
         
       </div>
 

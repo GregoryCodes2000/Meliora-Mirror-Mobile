@@ -10,6 +10,23 @@
   border-radius: 15px;
   height:7rem;
   }
+
+  @media (max-width: 490px) {
+    .stock-card{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      background:#000;
+      color:white;
+      padding:15px;
+      width:320px;
+      font-family:Arial;
+      border-radius: 15px;
+      height:7rem;
+      scale:70%;
+      margin-top: -1rem;
+      }
+  }
   
   .stock-info{
     

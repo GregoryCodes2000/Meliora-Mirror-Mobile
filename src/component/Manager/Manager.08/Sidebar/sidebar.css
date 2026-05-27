@@ -128,7 +128,10 @@
     transform: translateY(5px); /* Shift up slightly */
     gap:80px;
     color:#000000;
-    text-decoration: none;
+    text-decoration: none; 
+  }
+  .label {
+    width:15rem;
   }
 
   body.dark .sidebar-button {
@@ -151,25 +154,77 @@
     box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
 
+  
 
+/* Browser Icon */
   .browser-icon {
     width: 20px; 
     height: 20px;
-   
-
-    box-shadow: 4px 4px 8px #929292, -4px -4px 8px #ffffff;
+    box-shadow: 2px 2px 4px #868686, -2px -2px 4px #ffffff;
     border-radius: 25px;
+    opacity: 75%;
   }
-
   body.dark .browser-icon {
     box-shadow: 2px 2px 2px #242424, -2px -2px 2px  #6c6c6c;
     color: #fff;
   }
+  .sidebar-button.active .browser-icon {
+    box-shadow:  2px 2px 4px #8f5800,
+                 -2px -2px 4px #ffd690;
+  }
+  
+/* Screen Icon */
+  .screen-icon {
+/*     display: relative; */    
+    width: 20px; 
+    height: 20px;
+    box-shadow: 2px 2px 4px #868686, -2px -2px 4px #ffffff;
+    border-radius: 3px;
+/*     position: absolute;
+ */  /*   margin-left: 10px; */
+  }
+  body.dark .screen-icon {
+    box-shadow: 2px 2px 2px #242424, -2px -2px 2px  #6c6c6c;
+    color: #fff;
+  }
+  .sidebar-button.active .screen-icon {
+    box-shadow:  2px 2px 4px #8f5800,
+                 -2px -2px 4px #ffd690;
+  }
+/* Clock Icon */
+.clock-icon {
+  width: 20px; 
+  height: 20px;
+  box-shadow: 2px 2px 4px #868686, -2px -2px 4px #ffffff;
+  border-radius: 25px;
+  /* margin-left: 18px; */
+  
+}
+body.dark .clock-icon {
+  box-shadow: 2px 2px 2px #242424, -2px -2px 2px  #6c6c6c;
+  color: #fff;
+}
+.sidebar-button.active .clock-icon {
+  box-shadow:  2px 2px 4px #8f5800,
+               -2px -2px 4px #ffd690;
+}
 
-  /* .website-button {
-    gap:50px;
-    display:flex;
-  } */
+/* Weather Icon */
+.weather-icon {
+  width: 20px; 
+  height: 20px;
+  box-shadow: 2px 2px 4px #868686, -2px -2px 4px #ffffff;
+  border-radius: 25px;
+  /* margin-left: -4px; */
+}
+body.dark .weather-icon {
+  box-shadow: 2px 2px 2px #242424, -2px -2px 2px  #6c6c6c;
+  color: #fff;
+}
+.sidebar-button.active .weather-icon {
+  box-shadow:  2px 2px 4px #8f5800,
+               -2px -2px 4px #ffd690;
+}
 
   .sidebar a {
    text-decoration: none;
@@ -247,89 +302,5 @@ background: #e6e4e4;
     border: none;
  }
 
- 
-  }
 
-  
-  
-   
-  
-  /*------------------ SETTINGS BUTTON ---------------------*/
-  /* .dropdown-button {
-    font-size: 1rem;
-    cursor: pointer;
-    background: #e6e4e4;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 4px 4px 8px #aaaaaa, -2px -2px 2px #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  } */
-
-  /*  .dropdown-button:active {
-    background: #d1d1d1;
-    box-shadow: inset 2px 2px 4px #aaaaaa, inset -2px -2px 4px #ffffff;
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
-  
-  .dropdown-button:hover {
-    background-color: #ff9e37; 
-    transition: background-color 0.5s ease;
-  } */
-  
-  /* .dropdown-menu {
-    list-style: none;
-    padding: 0;
-    margin: 4px 0;
-    background: #e6e4e4;
-    border-radius: 10px;
-    box-shadow: 4px 4px 8px #aaaaaa, -2px -2px 4px #ffffff;
-    list-style-type: none; 
-    max-height: 0px;
-    opacity: 0; 
-    transform: translateY(1px); 
-    transition: max-height 0.9s ease, opacity 0.9s ease, transform 0.9s ease;
-    border: 1px solid #ddd; 
-    z-index: 1000; 
-  } */
-  
-  /* .dropdown-menu.open {
-    max-height: 10rem;
-    opacity: 1;
-  }
-  
-  .dropdown-item {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    cursor: pointer;
-    padding: 10px 15px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .dropdown-item:active {
-    background: #ff8400;
-    border-radius: 10px;
-    box-shadow: inset 2px 2px 4px #aaaaaa, inset -2px -2px 4px #ffffff;
-   
-  }
-  
-  .dropdown-item:last-child {
-    border-bottom: none;
-  }
-  
-  .arrow {
-    transition: transform 0.3s;
-  }
-  
-  .arrow.up {
-    transform: rotate(180deg);
-  }
-
-  .settings-icon {
-    width: 20px;
-    height: 20px;
-    margin-left: 3rem;
-    box-shadow: 4px 4px 8px #929292, -4px -4px 8px #ffffff;
-    border-radius: 25px;
-  } */

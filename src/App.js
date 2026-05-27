@@ -23,7 +23,12 @@ function App() {
     document.body.className = theme;
   }, [theme]);
   
-
+  React.useEffect(() => {
+    // Whenever hamburger changes, update sidebar
+    if (isMobile) {
+      setSidebarOpen(hamburgerOpen);
+    }
+  }, [hamburgerOpen, isMobile]);
   {
     /* <div className={`app-conteiner ${showSidebar ? "shifted" : ""}`}></div> */
   }
@@ -35,6 +40,7 @@ function App() {
             isMobile={isMobile}
             sidebarOpen={sidebarOpen}
             setSidebarOpen={setSidebarOpen}
+            setHamburgerOpen={setHamburgerOpen} 
           />
           <ThemeMode theme={theme} setTheme={setTheme} />
         </div>
