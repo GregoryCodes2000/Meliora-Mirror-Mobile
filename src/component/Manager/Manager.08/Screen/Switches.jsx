@@ -95,7 +95,7 @@ const ToggleSwitches = ({
             {item === "clock" ? (
               <div className="time-switch">
                 <TimeDisplay is24Hour={true} />
-                <button className="settings-btn">
+                <button className="clock-settings-btn">
                   <Link to="/clock">
                     <img src={settingsImage} />
                   </Link>
@@ -112,13 +112,13 @@ const ToggleSwitches = ({
             ) : item === "weather" ? (
               <div className="weather-switch">
                 <WeatherDisplay />
-                <div>
+                
                   <button className="weather-settings-btn">
                     <Link to="/weather">
                       <img src={settingsImage} />
                     </Link>
                   </button>
-                </div>
+                
               </div>
             ) : item === "forecast" ? (
               <div className="forecast-switch">
