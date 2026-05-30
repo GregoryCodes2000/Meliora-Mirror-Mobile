@@ -190,7 +190,9 @@ const Manager8 = () => {
     <div className="layout">
       <div className="screen-control">
         <div className="toggle-group">
-          {/* <SearchBar /> */}
+        
+         {/*  <SearchBar /> */}
+         
 
           {
             <ToggleSwitches

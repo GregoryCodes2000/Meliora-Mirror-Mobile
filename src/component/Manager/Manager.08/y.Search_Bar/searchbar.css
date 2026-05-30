@@ -4,12 +4,12 @@
     position: sticky; /* stays on top when scrolling */
     top: 0;
     z-index: 10;
-    width: 100%;
+    width: 78%;
     background: #e6e4e4;
     border-radius: 10px;
     box-shadow: 2px 2px 4px #aaaaaa, -2px -2px 2px #ffffff;
     transition: background-color 0.5s ease;
-   
+   margin-left: 3rem;
   }
   
   .search-bar input {

@@ -12,6 +12,7 @@ import settingsImage from "./../../../../assets/gear.png";
 import { Link } from "react-router-dom";
 import "./switches.css";
 import NewsDisplay from "../News/NewsDisplay";
+import SearchBar from "../y.Search_Bar/SearchBar";
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -90,6 +91,7 @@ const ToggleSwitches = ({
 
       {/* MODULE CONTENT */}
       <div className="checkbox-img">
+        
         {showImageSection[item] && (
           <div className={`img-section ${item}-bottom`}>
             {item === "clock" ? (

@@ -27,10 +27,10 @@
   height: 3rem;
 }
 
-.prev-settings button:hover {
+/* .prev-settings button:hover {
   background-color: #ff8400;
   color: white;
-}
+} */
 
 .prev-settings button:active {
   background: #d1d1d1;
@@ -44,14 +44,14 @@ body.dark .prev-settings button {
   box-shadow: 2px 2px 2px #242424, -2px -2px 2px #6c6c6c;
 }
 
-body.dark .prev-settings button:hover {
+/* body.dark .prev-settings button:hover {
   background-color: #974848;
-}
+} */
 
-body.dark .prev-settings button:active {
+/* body.dark .prev-settings button:active {
   background-color: #974848;
   box-shadow: -2px -2px 2px #242424, 2px 2px 2px #6c6c6c;
-}
+} */
 
 .turn-grid {
   display:none;
