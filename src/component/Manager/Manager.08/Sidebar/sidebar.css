@@ -244,8 +244,10 @@ body.dark .weather-icon {
   }
 
   .logout {
-    display: grid;
-   margin-top: 13rem;
+    position: absolute;
+    bottom: 6.4rem; /* adjust */
+    left: 12px;
+
    }
   
    .logout-btn {
@@ -256,7 +258,12 @@ body.dark .weather-icon {
           color:#000000;
       text-decoration: none;
       border: none;
+      width:11.7rem;
+      padding: 10px;
+      height: 2.5rem;
    }
+
+
 
    body.dark .logout-btn {
     box-shadow: 2px 2px 2px #242424, -2px -2px 2px  #6c6c6c;
@@ -283,7 +290,7 @@ body.dark .weather-icon {
     display: row;
     align-items: center;
     justify-content: space-around;
-    align-items: center;
+   
    
     gap: 55px; /* Space between the image and text */
     margin-bottom: -6px;

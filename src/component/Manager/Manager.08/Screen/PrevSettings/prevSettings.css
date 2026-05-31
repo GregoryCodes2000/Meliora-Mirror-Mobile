@@ -91,7 +91,7 @@ body.dark .prev-settings button {
     justify-content: center;
   align-items: center;
   height:45px;
-  
+  border-radius: 8px;
 /*   scale: ;
 
  */  }

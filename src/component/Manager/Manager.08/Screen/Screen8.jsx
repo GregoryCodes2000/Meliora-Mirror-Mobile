@@ -125,9 +125,12 @@ const Manager8 = () => {
     setOptions({
       clock: false,
       weather: false,
+      forecast: false,
       calendar: false,
       praise: false,
       newsfeed: false,
+      ttc: false,
+      stock: false,
     });
 
     /* setShowImageSection({
