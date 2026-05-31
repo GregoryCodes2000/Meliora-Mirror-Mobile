@@ -208,6 +208,7 @@ const Manager8 = () => {
           }
         </div>
 
+
         <div className="top-section">
           {/* <div> */}
           <PrevControls

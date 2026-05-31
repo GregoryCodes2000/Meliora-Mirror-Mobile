@@ -15,8 +15,7 @@
   margin-top: 1.5rem;
   gap: 1rem; /* gap for prevSettings buttons */
   /* background: rgb(17, 244, 17); */
-
-  
+  align-items: flex-start;
 }
 
 .screen-content {
@@ -35,10 +34,16 @@
   /* background: rgb(139, 175, 139); */
 }
 
+.screen-control {
+  display: flex;
+  align-items: flex-start;
+}
+
 .prev-settings-group {
-  margin-top: 18rem;
-  margin-left: 1rem;
-  
+  position: fixed;
+  right: 10rem;
+  top: 17rem;
+  margin: 0;
 }
 
 .savebutton-mobile {
@@ -52,6 +57,10 @@
 .toggle-group-mobile {
   display:none;
 }
+
+/* .top-section {
+  padding-right: 1rem;
+} */
 
 /* .searchbar{
   width: 5rem;
@@ -132,8 +141,7 @@ body.dark .box-shadowed {
 
   .top-section {
     margin-top: 0.5rem;
-    
-  }
+}
  
   .prev-settings-group-mobile {
    /*  margin-top: rem;
