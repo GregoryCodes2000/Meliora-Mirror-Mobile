@@ -283,9 +283,7 @@ body.dark .arrow {
   position: absolute;
   margin-left: 17.3rem;
 }
-.checkbox-container {
-  transition: transform 0.3s ease;
-}
+
 
 .show-switches-button {
   display: none;
@@ -552,6 +550,7 @@ width: 15rem;
     margin-left: 0rem;
     border-top: 1px solid rgb(173, 173, 173);
     border-radius: 15px;
+    width: 100%;
     /* padding-top: 1px;
     box-shadow:
   1px 1px 1px #ffffff,
@@ -583,13 +582,22 @@ width: 15rem;
   .checkbox-container {
     display: flex;
     /* margin: 0px 0px 0px 0px; */
-    padding: 5px 12px 6rem;
+    padding: 5px 8px 6rem;
     gap: 8.5px;
     scrollbar-width: none;
     overscroll-behavior: contain;
-
-    margin: 0px 0px 0px;
+    margin: -5px 0px 0px 0px;
     flex-direction: column; /* <-- MISSING */
+
+  
+      transition: transform 0.3s ease;
+      padding-top: 1rem;
+     /*  width: 100%; */
+
+     
+        
+      
+    
   }
 
   .toggle-label {
