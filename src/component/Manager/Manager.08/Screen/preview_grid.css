@@ -118,6 +118,8 @@ min-width: 378px;
 
   }
 
+
+
   .preview-window {
     background: #393737;
     width: fit-content;
@@ -134,7 +136,7 @@ min-width: 378px;
     
   }
 
-  
+
 
   .preview-square {
     height: 45.px; /* smaller height */

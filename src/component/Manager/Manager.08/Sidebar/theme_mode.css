@@ -13,7 +13,7 @@
     transform: translateY(5px); /* Shift up slightly */
    bottom: 1.5rem;
    position:absolute;
-   margin-left: 12px;
+   margin-left: 15px;
   }
 
   @media (max-width: 768px) {

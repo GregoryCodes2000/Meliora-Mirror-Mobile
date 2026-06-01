@@ -62,6 +62,7 @@ function App() {
 
           <div className="content">
             <Routes>
+              
             <Route path="/profile" element={<Profile />} />
               <Route path="/screen" element={<Manager8 />} />
               <Route path="/clock" element={<Clock theme={theme} />} />

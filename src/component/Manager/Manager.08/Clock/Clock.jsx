@@ -38,6 +38,7 @@ const Clock = ({ theme }) => {
   return (
     <div className="time-zone">
       {/* Time Display Component */}
+     <div className="clock-section">
       <div className="display">
         {/* <div className="border"> */}
       <TimeDisplay
@@ -61,7 +62,7 @@ const Clock = ({ theme }) => {
         >
           24H
         </button>
-      </div>
+      </div></div>
 
       {/* Time Zone Selector */}
       <div className="selector">

@@ -20,8 +20,9 @@ body.dark .time-zone {
 }
 
 .selector {
-  margin-bottom: 23rem;
+  /* margin-bottom: 23rem; */
  justify-content: center;
+ width: 20rem;
 }
 
 
@@ -38,21 +39,26 @@ left:0;
   text-align: left;
   width: 17.5rem;
  /* margin-bottom: 20rem; */
- 
+ box-shadow: -2px -2px 2px 2px #464646, 2px 2px 2px 2px #ffffff;
+ border-radius: 15px;
+}
+body.dark .time-display {
+  box-shadow: -2px -2px 2px 2px #3c3c3c, 2px 2px 2px 2px #767676;
+
 }
 
 .time-border {
   background-color: #000000;
   border-radius: 15px;
   padding: 10px;
-  box-shadow: -3px -3px 5px 2px #818181, 3px 3px 2px 2px #ffffff;
-}
+/*   box-shadow: -3px -3px 5px 2px #818181, 3px 3px 2px 2px #ffffff;
+ */}
 
-body.dark .time-border{
-  
-  box-shadow: -2px -2px 2px #242424, 2px 2px 2px  #6c6c6c;
+/* body.dark .time-border{
+  background-color: #000000;
+  box-shadow: -2px -2px 2px #000000, 2px 2px 2px  #5a5a5a;
   color: #fff;
-}
+} */
 
 .time-display .date {
   font-size: 20px;
@@ -80,6 +86,15 @@ body.dark .time-border{
 
 
 
+.time-format-buttons {
+  display: flex;
+  justify-content: center;
+ font: black;
+ height:30%;
+   gap: 12px;
+   width:17.6rem;
+   margin-top: 1rem;
+}
 
 .time-format-buttons button {
   background: #e0e0e0;
@@ -92,13 +107,17 @@ body.dark .time-border{
   transition: 0.2s all ease;
   /* font-weight: bold; */
   font-size: 1rem;
-  width:10rem;
+  width:11rem;
+  height: 2rem;
+
 }
 
 body.dark .time-format-buttons button {
   background-color: #4e4e4e;
   box-shadow: 2px 2px 2px #242424, -2px -2px 2px  #6c6c6c;
   color: #fff;
+
+
 }
 
 .time-format-buttons button.active {
@@ -238,9 +257,14 @@ body.dark .tz-select__single-value {
 
 /* Default (desktop) layout stays side by side */
 .time-zone {
-  display: flex;
+  display: row;
   justify-content: space-between;
   gap: 2.5rem;
+}
+
+.clock-section{
+  gap: 5rem;
+  display: column;
 }
 
 /* On small screens, stack vertically */
@@ -248,11 +272,11 @@ body.dark .tz-select__single-value {
 @media (max-width: 768px) {
   .time-zone {
     display: grid;
-    grid-template-areas:
+    /* grid-template-areas:
       "time"
       "colors"
-      "tz";
-    /* gap: 1rem; */
+      "tz"; */
+    gap: 0rem;
     width: 85% ;
     height: 31rem;
 /*     margin: 16px;
@@ -263,6 +287,14 @@ body.dark .tz-select__single-value {
     text-align: center;  
    /*  background: #4a7daf; */
     justify-content: center;
+  }
+
+  .clock-section{
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    gap: 0rem;
+    height: 90%;
   }
 
  /*  .time-zone-label {
@@ -284,12 +316,12 @@ body.dark .tz-select__single-value {
   .time-format-buttons {
     /* margin-top: 10px; */
     display: flex;
- 
+    margin-top: 0rem;
     justify-content: center;
-    margin-top: -6.5rem;
+    
    font: black;
 /*   width:18rem;
- */  height:35%;
+ */  height:30%;
      /* justify-content: center; */
      gap: 10px;
   }
@@ -297,37 +329,36 @@ body.dark .tz-select__single-value {
  
  
   .selector {
-    margin-top: -11.5rem;
    text-align: left;
    width: 100%;
    /* margin-left:  1rem; */
    /* background: #650c0c; */
+   margin-top: -5rem;
   }
 
   .display{
    /*  background: #066839; */
+   height:4rem;
   }
   
   .time-display {
-    /* flex-shrink: 0;
-    display:block;
-    text-align: left;
-    width: 19rem;
-   scale: 100%;
-   padding: none; */
-   /* margin: 4px 0px 0; */
    border-radius: 15px;
-   box-shadow: -2px -2px 2px 2px #818181, 2px 2px 2px 2px #ffffff;
+   box-shadow: -2px -2px 2px 2px #888888, 2px 2px 2px 2px #ffffff;
    margin-top: 10px;
-   width: 19rem;
+   width: 18rem;
+   padding: 5px; 
+   background-color: #000000
+  }
 
-   
+  body.dark .time-display {
+    box-shadow: -2px -2px 2px 2px #2e2e2e, 2px 2px 2px 2px #616161;
+
   }
   
   .time-border {
-    background-color: #000000;
+    /* background-color: #000000;
     border-radius: 15px;
-    padding: 20px;
+    padding: 20px; */
     /* box-shadow: -3px -3px 5px 2px #ffffff, 3px 3px 2px 2px #563636; */
     
   }
@@ -417,4 +448,9 @@ body.dark .tz-select__menu-list::-webkit-scrollbar-track {
 .option {
   box-shadow: -2px -2px 2px #818181, 2px 2px 2px #ffffff;
 
+}
+
+body.dark .clock-preview .time-display {
+  box-shadow: none;
+  border: none;
 }

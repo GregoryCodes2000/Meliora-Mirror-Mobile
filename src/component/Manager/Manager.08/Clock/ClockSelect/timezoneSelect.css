@@ -31,6 +31,18 @@ margin-top: 7px;
     font-size: 1.1rem;
     outline: none;
   }
+
+  body.dark .tz-input {
+    color: rgb(234, 234, 234);
+  }
+
+  body.dark .tz-input-box {
+    background-color: #545454;
+    
+   /*  width: 94%; */
+    font-size: 1rem;
+    box-shadow: -2px -2px 2px #2f2f2f, 2px 2px 2px #6e6e6e;
+  }
   
   .tz-arrow {
     color: rgb(152, 152, 152);
@@ -67,6 +79,11 @@ margin-top: 7px;
   width: 96.5%;
   }
   
+body.dark .tz-option{
+  background-color: #545454;
+  box-shadow: 2px 2px 2px #2f2f2f, -2px -2px 2px #6e6e6e;
+}
+
   .tz-option:hover,
   .tz-option.highlighted {
     /* background: #333; */
