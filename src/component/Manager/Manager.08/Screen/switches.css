@@ -318,6 +318,15 @@ body.dark .arrow {
   margin-top: 15px;
 }
 
+body.dark .clock-settings-btn {
+  background-color: #4e4e4e;
+  box-shadow: 2px 2px 2px 2px #383838, -2px -2px 2px 2px #7a7a7a;
+}
+
+body.dark .clock-settings-btn:active {
+  box-shadow: -2px -2px 2px 2px #383838, 2px 2px 2px 2px #7a7a7a;
+}
+
 /* image inside button */
 .clock-settings-btn img {
   width: 26%; /* keeps it proportional */
@@ -988,15 +997,24 @@ width: 15rem;
 
   box-shadow: 2px 2px 2px #a3a3a3, -2px -2px 2px #ffffff;
 
-  width: 4.8rem;
-  height: 1.8rem;
+  width: 4.9rem;
+  height: 1.7rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   left: 0px;
-  margin-top: 24px;
+  margin-top: 26px;
+}
+
+body.dark .weather-settings-btn {
+  background-color: #4e4e4e;
+  box-shadow: 2px 2px 2px 2px #383838, -2px -2px 2px 2px #7a7a7a;
+}
+
+body.dark .weather-settings-btn:active {
+  box-shadow: -2px -2px 2px 2px #383838, 2px 2px 2px 2px #7a7a7a;
 }
 
 .weather-settings-btn img {
