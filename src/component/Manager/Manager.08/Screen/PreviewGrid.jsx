@@ -16,8 +16,8 @@ const PreviewGrid = ({
   handleDrop,
   handleDragStart,
   handleDragEnd,
-  stockModules,
-  options
+  stockModules = [],
+  options = {},
 }) => {
   // Touch tracking
   const touchData = useRef({
@@ -80,11 +80,11 @@ const PreviewGrid = ({
   while (paddedGrid.length < totalSquares) {
     paddedGrid.push("");
   }
-
   return (
     <div className="preview-container" onDragOver={handleDragOver}>
       <div className={`preview-window ${orientation}`}>
         {paddedGrid.map((content, index) => (
+          
           <div
             className={`preview-square ${
               content === "forecast" || content === "calendar"
@@ -100,6 +100,7 @@ const PreviewGrid = ({
             style={{ position: "relative" }}
           >
             {content && options[content.split("-")[0]] && (
+              
               <div
                 draggable
                 onDragStart={(e) => handleDragStart(e, content)}
@@ -157,6 +158,8 @@ const PreviewGrid = ({
   const module = stockModules[index];
 
   if (!module || !module.symbol) return null;
+
+  
 
   return (
     <div className="stock-preview">

@@ -80,7 +80,7 @@
     background: #e6e4e4;
     border-radius: 10px;
     box-shadow: /* inset */ 2px 2px 2px #aaaaaa, -2px -2px 2px #ffffff;
-    transition: 0.9s all ease;
+    transition: 0.2s all ease;
    margin-bottom: -5px;
   }
 
@@ -93,6 +93,11 @@
   .profile-button:active {
     background: #d1d1d1;
     box-shadow: inset 2px 2px 4px #aaaaaa, inset -2px -2px 4px #ffffff;
+  }
+
+  body.dark .profile-button:active {
+    background-color: #4e4e4e;
+    box-shadow: -2px -2px 2px #242424, 2px 2px 2px  #6c6c6c;
   }
   
   .profile-img {
@@ -160,6 +165,11 @@
    
     box-shadow: inset 2px 2px 4px #aaaaaa, inset -2px -2px 4px #ffffff;
     box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  body.dark .sidebar-button:active {
+    background-color: #4e4e4e;
+    box-shadow: -2px -2px 2px #242424, 2px 2px 2px  #6c6c6c;
   }
 
   
@@ -271,10 +281,14 @@ body.dark .weather-icon {
 
 
    body.dark .logout-btn {
-    box-shadow: 2px 2px 2px #242424, -2px -2px 2px  #6c6c6c;
     color: #fff;
     background-color: #4e4e4e;
     box-shadow: 2px 2px 2px #242424, -2px -2px 2px  #6c6c6c;
+  }
+
+  body.dark .logout-btn:active {
+    background-color: #4e4e4e;
+    box-shadow: -2px -2px 2px #242424, 2px 2px 2px  #6c6c6c;
   }
 
   @media (max-width: 768px) {

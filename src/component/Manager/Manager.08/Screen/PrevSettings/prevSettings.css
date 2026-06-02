@@ -10,7 +10,7 @@
 .prev-settings button {
   padding: 14px 20px;
   font-size: 1rem;
-  border-radius: 15px;
+  border-radius: 12px;
   border: none;
   background-color: #e0e0e0;
   color: black;
@@ -34,6 +34,12 @@
 .prev-settings button:active {
   background: #d1d1d1;
   box-shadow: inset 2px 2px 4px #aaaaaa, inset -2px -2px 4px #ffffff;
+}
+
+body.dark .prev-settings button:active {
+  background-color: #4e4e4e;
+  color: #fff;
+  box-shadow: -2px -2px 2px #242424, 2px 2px 2px #6c6c6c;
 }
 
 /* Dark mode styling */

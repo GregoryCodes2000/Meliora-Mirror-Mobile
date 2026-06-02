@@ -226,6 +226,8 @@ const Manager8 = () => {
             handleDrop={handleDrop}
             handleDragStart={handleDragStart}
             handleDragEnd={handleDragEnd}
+            stockModules={stockModules}
+            options={options}
           />
           {/* </div> */}
           <div className="screen-content">
