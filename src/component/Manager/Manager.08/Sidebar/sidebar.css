@@ -36,7 +36,9 @@
   
   .profile-button {
     margin-top: 10px;
- 
+
+    
+    
   }
 
   body.dark .profile-icon {
@@ -74,14 +76,14 @@
     padding: 5px;
     display: flex;
     align-items: center;
-  /*   pointer-events: none; */
-    gap: 85px;
     color: #000000;
     background: #e6e4e4;
     border-radius: 10px;
     box-shadow: /* inset */ 2px 2px 2px #aaaaaa, -2px -2px 2px #ffffff;
     transition: 0.2s all ease;
    margin-bottom: -5px;
+    padding-left: 15px;
+    gap:75px;
   }
 
   body.dark .profile-button {
@@ -191,6 +193,23 @@
                  -2px -2px 4px #ffd690;
   }
   
+.n3xar-icon {
+  width: 20px; 
+    height: 20px;
+    box-shadow: 2px 2px 4px #868686, -2px -2px 4px #ffffff;
+    border-radius: 3px;
+    opacity: 75%;
+    border: 1px solid rgb(88, 88, 88);
+}
+body.dark .n3xar-icon {
+  box-shadow: 2px 2px 2px #242424, -2px -2px 2px  #6c6c6c;
+  color: #fff;
+}
+.sidebar-button.active .n3xar-icon {
+  box-shadow:  2px 2px 4px #8f5800,
+               -2px -2px 4px #ffd690;
+}
+
 /* Screen Icon */
   .screen-icon {
 /*     display: relative; */    

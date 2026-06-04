@@ -17,6 +17,8 @@ import MobileHeader from "./component/Manager/Manager.08/z.Mobile/MobileHeader";
 import { Squash as Hamburger } from "hamburger-react";
 import Profile from "./component/Manager/Manager.08/Profile/Profile";
 
+import { Navigate } from "react-router-dom";
+
 function App() {
   const [theme, setTheme] = useState("light");
   const [showSidebar, setShowSidebar] = useState(false);
@@ -62,6 +64,7 @@ function App() {
 
           <div className="content">
             <Routes>
+            <Route path="/" element={<Navigate to="/screen" replace />} />
               
             <Route path="/profile" element={<Profile />} />
               <Route path="/screen" element={<Manager8 />} />

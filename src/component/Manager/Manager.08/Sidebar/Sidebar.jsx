@@ -9,6 +9,7 @@ import screenIcon from "../../../../assets/screenicon.png";
 import clockIcon from "../../../../assets/clockicon.png";
 import weatherIcon from "../../../../assets/weathericon.png";
 import logo from "../../../../assets/mir_logo.png";
+import n3xarIcon from "../../../../assets/n3xar.png";
 
 const Sidebar = ({ isMobile  }) => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -49,7 +50,7 @@ const Sidebar = ({ isMobile  }) => {
   }
          
         ><div className="label">
-          Screen</div>
+        Display</div>
           <img src={screenIcon} alt="screen" className="screen-icon" />
         </NavLink>
         <h3 className="bar-header">[Customize Modules]</h3>
@@ -77,18 +78,30 @@ const Sidebar = ({ isMobile  }) => {
         </NavLink>
         <h3 className="bar-header">[Quick Links]</h3>
         <NavLink
-         to="/website"
+         to=""
+         className={({ isActive }) =>
+         "sidebar-button" + (isActive ? " active" : "")
+         
+       }
+          
+        >
+        <div className="label" >
+          Website</div>
+          <img src={browserImage} className="browser-icon" />
+          </NavLink>
+          {/* <NavLink
+         to="/smarthome"
          className={({ isActive }) =>
          "sidebar-button" + (isActive ? " active" : "")
        }
           
         >
         <div className="label">
-          Website</div>
-          <img src={browserImage} className="browser-icon" />
-          </NavLink>
-        
+          Smart Home</div>
+          <img src={n3xarIcon} className="n3xar-icon" />
+          </NavLink> */}
       </div>
+      
 
       <div className="logout">
       <button  className="logout-btn">

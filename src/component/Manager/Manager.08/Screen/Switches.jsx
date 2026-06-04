@@ -172,14 +172,17 @@ const ToggleSwitches = ({
                   </button>
 
                   <button
-                    className="remove-stock-btn"
-                    onClick={() => {
-                      setStockModules((prev) => prev.slice(0, -1));
-                      handleRemoveFromGrid(`stock-${stockModules.length - 1}`);
-                    }}
-                  >
-                    –
-                  </button>
+  className="remove-stock-btn"
+  disabled={stockModules.length <= 1}
+  onClick={() => {
+    if (stockModules.length <= 1) return;
+
+    setStockModules((prev) => prev.slice(0, -1));
+    handleRemoveFromGrid(`stock-${stockModules.length - 1}`);
+  }}
+>
+  –
+</button>
                 </div>
               </div>
             ) : (

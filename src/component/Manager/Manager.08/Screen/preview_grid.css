@@ -251,7 +251,7 @@ min-width: 378px;
     height:100%;
     display:flex;
     scale:20%;
-    margin-top: -22px;
+    margin-bottom: 28px;
   }
 
 }
@@ -445,7 +445,7 @@ img.toggle-image {
   height:100%;
   display:flex;
   scale:30%;
-  margin-top: -22px;
+  margin-bottom: 28px;
 }
 
 @media (max-width: 768px) {
