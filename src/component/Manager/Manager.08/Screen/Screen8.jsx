@@ -16,6 +16,8 @@ const Manager8 = () => {
     forecast:true,
     praise: true,
     newsfeed: true,
+    ttc: false,
+  stock: false,
   });
 
   const [showImageSection, setShowImageSection] = useState({
@@ -153,6 +155,8 @@ const Manager8 = () => {
       forecast: true,
       praise: true,
       newsfeed: true,
+      /* ttc: false,
+      stock: false, */
     });
 
     // Reset grid content

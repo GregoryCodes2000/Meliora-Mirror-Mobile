@@ -373,15 +373,19 @@ body.dark .forecast-switch {
 
 .calendar-switch {
   background: #000000;
-  scale: 50%;
+  scale: 60%;
   padding: 10px;
   border-radius: 15px;
-  margin-top: 5.5rem;
+  margin-top: 6rem;
   box-shadow: -3px -3px 3px 3px #818181, 3px 3px 3px 3px #ffffff;
 }
 
+body.dark .calendar-switch {
+  box-shadow: -3px -3px 3px 3px #383838, 3px 3px 3px 3px #6c6c6c;
+}
+
 .img-section.calendar-bottom {
-  margin-bottom: 5.5rem;
+  margin-bottom: 6rem;
 }
 
 .praise-switch {
@@ -390,6 +394,10 @@ body.dark .forecast-switch {
   padding: 20px;
   border-radius: 30px;
   box-shadow: -4px -4px 4px 4px #818181, 4px 4px 4px 4px #ffffff;
+}
+
+body.dark .praise-switch {
+  box-shadow: -4px -4px 4px 4px #383838, 4px 4px 4px 4px #6c6c6c;
 }
 
 .img-section.praise-bottom {
@@ -403,6 +411,10 @@ body.dark .forecast-switch {
 width: 15rem;
   padding: 20px;
   box-shadow: -2px -2px 2px 2px #818181, 2px 2px 2px 2px #ffffff;
+}
+
+body.dark .newsfeed-switch {
+  box-shadow: -2px -2px 2px 2px #383838, 2px 2px 2px 2px #6c6c6c;
 }
 
 .img-section.newsfeed-bottom {
@@ -425,6 +437,10 @@ width: 15rem;
 
 .img-section.ttc-bottom {
   margin-bottom: 0.5rem;;
+}
+
+body.dark .ttc-switch {
+  box-shadow: -2px -2px 2px 2px #383838, 2px 2px 2px 2px #6c6c6c;
 }
 
 /*------------------------------------STOCK SWITCH----------------------------------*/
