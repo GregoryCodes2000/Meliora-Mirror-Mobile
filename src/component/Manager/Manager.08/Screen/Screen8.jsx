@@ -175,6 +175,7 @@ const Manager8 = () => {
 
   // ADD A MODULE TO FIRST EMPTY GRID CELL
   const handleAddToGrid = (item) => {
+    console.log("ADDING TO GRID:", item);
     setGridContent((prevGrid) => {
       const newGrid = [...prevGrid];
       const firstEmpty = newGrid.findIndex((cell) => cell === null);
@@ -182,6 +183,7 @@ const Manager8 = () => {
       if (firstEmpty !== -1) {
         newGrid[firstEmpty] = item; // e.g. "stock-0"
       }
+      console.log("NEW GRID:", newGrid);
       return newGrid;
     });
   };
