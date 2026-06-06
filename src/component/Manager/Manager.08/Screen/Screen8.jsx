@@ -26,6 +26,8 @@ const Manager8 = () => {
     calendar: false,
     praise: false,
     newsfeed: false,
+    /* ttc: false,
+  stock: false, */
   });
 
   /* const [stockModules, setStockModules] = useState([
@@ -54,14 +56,57 @@ const Manager8 = () => {
 
   const handleToggleChange = (event) => {
     const { name, checked } = event.target;
-
-    setOptions((prevOptions) => ({ ...prevOptions, [name]: checked }));
-
+  
+    setOptions((prevOptions) => ({
+      ...prevOptions,
+      [name]: checked,
+    }));
+  
+    // STOCK SPECIAL CASE
+    if (name === "stock") {
+      if (checked) {
+        setGridContent((prevGrid) => {
+          const newGrid = [...prevGrid];
+  
+          stockModules.forEach((module) => {
+            const alreadyExists = newGrid.includes(`stock-${module.id}`);
+  
+            if (!alreadyExists) {
+              const firstEmpty = newGrid.findIndex(
+                (cell) => cell === null
+              );
+  
+              if (firstEmpty !== -1) {
+                newGrid[firstEmpty] = `stock-${module.id}`;
+              }
+            }
+          });
+  
+          return newGrid;
+        });
+      } else {
+        setGridContent((prevGrid) =>
+          prevGrid.map((cell) =>
+            cell?.startsWith("stock-") ? null : cell
+          )
+        );
+      }
+  
+      return;
+    }
+  
+    // NORMAL MODULES
     if (checked) {
       setGridContent((prevGrid) => {
         const newGrid = [...prevGrid];
-        const firstEmptyIndex = newGrid.findIndex((item) => item === null);
-        if (firstEmptyIndex !== -1) newGrid[firstEmptyIndex] = name;
+        const firstEmptyIndex = newGrid.findIndex(
+          (item) => item === null
+        );
+  
+        if (firstEmptyIndex !== -1) {
+          newGrid[firstEmptyIndex] = name;
+        }
+  
         return newGrid;
       });
     } else {
@@ -155,8 +200,8 @@ const Manager8 = () => {
       forecast: true,
       praise: true,
       newsfeed: true,
-      /* ttc: false,
-      stock: false, */
+      ttc: false,
+      stock: false,
     });
 
     // Reset grid content
