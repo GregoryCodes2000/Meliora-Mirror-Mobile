@@ -8,21 +8,56 @@ const TtcAlerts = () => {
 
   useEffect(() => {
     async function load() {
-      const res = await fetch("http://localhost:5001/api/ttc");
-      const json = await res.json();
-      console.log(json);
+      try {
+        setLoading(true);
+
+        const res = await fetch("http://localhost:4006/ttc");
+
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+
+        const json = await res.json();
+
+        console.log("TTC Response:", json);
+
+        const formattedAlerts = (json.siteWideCustom || []).map((alert) =>
+          formatForMirror(alert)
+        );
+
+        setAlerts(formattedAlerts);
+        setError(null);
+      } catch (err) {
+        console.error("TTC Error:", err);
+        setError("Failed to load TTC alerts");
+      } finally {
+        setLoading(false);
+      }
     }
+
     load();
+
+    const interval = setInterval(load, 60000); // refresh every minute
+
+    return () => clearInterval(interval);
   }, []);
 
-  if (loading) return <div>Loading TTC Alerts…</div>;
-  if (error) return <div>{error}</div>;
-  if (!alerts.length) return <div>No subway service alerts</div>;
+  if (loading) {
+    return <div>Loading TTC Alerts...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (alerts.length === 0) {
+    return <div>No subway service alerts</div>;
+  }
 
   return (
     <div>
-      {alerts.map((alertText, i) => (
-        <pre key={i}>{alertText}</pre>
+      {alerts.map((alertText, index) => (
+        <pre key={index}>{alertText}</pre>
       ))}
     </div>
   );

@@ -1,16 +1,14 @@
-
-import express from "express";
-import cors from "cors";
+/* const express = require("express");
+const cors = require("cors");
 
 const app = express();
 app.use(cors());
 
-const NEWS_API_KEY = "ea567c37e3d64382b78fbe664d0b0ded";
+const NEWS_API_KEY = "d6s9kjhr01qj447arfd0d6s9kjhr01qj447arfdg";
 
 app.get("/news", async (req, res) => {
   try {
-    const url =
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${NEWS_API_KEY}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${NEWS_API_KEY}`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -23,5 +21,5 @@ app.get("/news", async (req, res) => {
 });
 
 app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
+  console.log("Server running on http://localhost:5000");
+}); */

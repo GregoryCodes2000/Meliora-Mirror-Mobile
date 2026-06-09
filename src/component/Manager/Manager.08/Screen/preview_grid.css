@@ -385,7 +385,7 @@ img.toggle-image {
   display:flex;
   justify-content:center;
   align-items:center;
-  scale:18%;
+  scale:30%;
 }
 
 .weather-preview {
@@ -413,7 +413,7 @@ img.toggle-image {
   display:flex;
   justify-content:center;
   align-items:center;
-  scale:22%;
+  scale:72%;
   
 }
 
@@ -484,4 +484,22 @@ img.toggle-image {
       scale:27%;
     }
 
+    .newsfeed-preview {
+      width:60rem;
+      height:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      scale:53%;
+      
+    }
+
+    .praise-preview{
+      width:25rem;
+      height:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      scale:19%;
+    }
 }
