@@ -87,7 +87,7 @@ const PreviewGrid = ({
           
           <div
             className={`preview-square ${
-              content === "forecast" || content === "calendar"
+              content === "forecast" || content === "calendar" || content === "ttc"
                 ? "large-item"
                 : content === "newsfeed"
                 ? "long-item"

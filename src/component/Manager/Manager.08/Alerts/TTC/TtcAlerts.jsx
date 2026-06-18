@@ -23,6 +23,16 @@ const TtcAlerts = () => {
         console.log("TTC Response:", json);
 
         setAlerts(json.siteWideCustom || []);
+        setAlerts([
+          {
+            id: "TEST",
+            routeType: "Subway",
+            customHeaderText:
+              "Line 1: No service between St Clair and Eglinton due to signal issues.",
+            description:
+              "Shuttle buses are operating. Expect delays of up to 20 minutes.",
+          },
+        ]);
         setError(null);
       } catch (err) {
         console.error("TTC Error:", err);
@@ -73,10 +83,18 @@ const TtcAlerts = () => {
       <div>Alert count: {alerts.length}</div>
 
       {alerts.map((alert, index) => (
-        <pre key={index}>
-          {JSON.stringify(alert, null, 2)}
-        </pre>
-      ))}
+  <div key={index} className="ttc-alert">
+    <div className="ttc-title">
+      {alert.customHeaderText || alert.title}
+    </div>
+
+    {alert.description && (
+      <div className="ttc-description">
+        {alert.description}
+      </div>
+    )}
+  </div>
+))}
     </div>
   );
 };
