@@ -23,7 +23,7 @@ const TtcAlerts = () => {
         console.log("TTC Response:", json);
 
         setAlerts(json.siteWideCustom || []);
-        setAlerts([
+        /* setAlerts([
           {
             id: "TEST",
             routeType: "Subway",
@@ -32,7 +32,7 @@ const TtcAlerts = () => {
             description:
               "Shuttle buses are operating. Expect delays of up to 20 minutes.",
           },
-        ]);
+        ]); */
         setError(null);
       } catch (err) {
         console.error("TTC Error:", err);
