@@ -1,4 +1,4 @@
-import { getTTCAlerts } from "./ttc.js";
+/* import { getTTCAlerts } from "./ttc.js";
 import { formatForMirror } from "./ttcFormater.js";
 
 const alerts = await getTTCAlerts();
@@ -32,4 +32,4 @@ app.get("/api/ttc", async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`TTC proxy running on port ${PORT}`);
-});
+}); */

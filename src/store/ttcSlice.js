@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchTtcAlerts = createAsyncThunk(
     "ttc/fetchAlerts",
     async () => {
-      const res = await fetch("http://localhost:5001/api/ttc"); // your local API
+      const res = await fetch("/.netlify/functions/ttc");
       const data = await res.json();
   
       const rawAlerts = data.siteWideCustom || [];

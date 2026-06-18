@@ -9,6 +9,8 @@ import ForecastDisplay from "../Weather/Forecast/ForecastDisplay";
 import WeatherDisplay from "../Weather/WeatherDisplay";
 import settingsImage from "./../../../../assets/gear.png";
 
+
+
 import { Link } from "react-router-dom";
 import "./switches.css";
 import NewsDisplay from "../News/NewsDisplay";

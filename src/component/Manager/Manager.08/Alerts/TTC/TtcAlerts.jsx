@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { formatForMirror } from "../../../../../server/ttcFormater.js";
+import ttcIcon from "../../../../../assets/ttc-logo.png";
+import "./ttcAlerts.css";
 
 const TtcAlerts = () => {
   const [alerts, setAlerts] = useState([]);
@@ -11,7 +12,7 @@ const TtcAlerts = () => {
       try {
         setLoading(true);
 
-        const res = await fetch("http://localhost:4006/ttc");
+        const res = await fetch("/.netlify/functions/ttc");
 
         if (!res.ok) {
           throw new Error(`HTTP ${res.status}`);
@@ -21,11 +22,7 @@ const TtcAlerts = () => {
 
         console.log("TTC Response:", json);
 
-        const formattedAlerts = (json.siteWideCustom || []).map((alert) =>
-          formatForMirror(alert)
-        );
-
-        setAlerts(formattedAlerts);
+        setAlerts(json.siteWideCustom || []);
         setError(null);
       } catch (err) {
         console.error("TTC Error:", err);
@@ -37,27 +34,48 @@ const TtcAlerts = () => {
 
     load();
 
-    const interval = setInterval(load, 60000); // refresh every minute
+    const interval = setInterval(load, 60000);
 
     return () => clearInterval(interval);
   }, []);
 
   if (loading) {
-    return <div>Loading TTC Alerts...</div>;
+    return (
+      <div>
+        <img src={ttcIcon} alt="TTC" className="ttc-icon" />
+        <div>Loading TTC Alerts...</div>
+      </div>
+    );
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return (
+      <div>
+        <img src={ttcIcon} alt="TTC" className="ttc-icon" />
+        <div>{error}</div>
+      </div>
+    );
   }
 
   if (alerts.length === 0) {
-    return <div>No subway service alerts</div>;
+    return (
+      <div>
+        <img src={ttcIcon} alt="TTC" className="ttc-icon" />
+        <div>No subway service alerts</div>
+      </div>
+    );
   }
 
   return (
     <div>
-      {alerts.map((alertText, index) => (
-        <pre key={index}>{alertText}</pre>
+      <img src={ttcIcon} alt="TTC" className="ttc-icon" />
+
+      <div>Alert count: {alerts.length}</div>
+
+      {alerts.map((alert, index) => (
+        <pre key={index}>
+          {JSON.stringify(alert, null, 2)}
+        </pre>
       ))}
     </div>
   );

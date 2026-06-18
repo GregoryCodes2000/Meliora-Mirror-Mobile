@@ -1,4 +1,4 @@
-const express = require("express");
+/* const express = require("express");
 const cors = require("cors");
 
 const app = express();
@@ -42,7 +42,8 @@ app.get("/ttc", async (req, res) => {
       error: "Failed to fetch TTC alerts",
     });
   }
-  app.listen(4006, () => {
-    console.log("Server running on http://localhost:4006");
-  });
 });
+
+app.listen(4006, () => {
+  console.log("Server running on http://localhost:4006");
+}); */

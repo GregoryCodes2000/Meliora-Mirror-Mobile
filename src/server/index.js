@@ -1,4 +1,4 @@
-import express from "express";
+/* import express from "express";
 import cors from "cors";
 import { getTTCAlerts } from "./ttc.js";
 
@@ -44,4 +44,4 @@ app.get("/api/ttc", async (req, res) => {
 });
 
 const PORT = 5001;
-app.listen(PORT, () => console.log(`TTC backend running on port ${PORT}`));
+app.listen(PORT, () => console.log(`TTC backend running on port ${PORT}`)); */

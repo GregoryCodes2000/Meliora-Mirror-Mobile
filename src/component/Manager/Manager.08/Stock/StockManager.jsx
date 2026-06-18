@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setSelectedTicker, fetchStockData } from "../../../../../src/store/stockSlice";
+import { setSelectedTicker, fetchStockData } from "../../../../store/stockSlice";
 import { useState } from "react";
 
 export default function StockManager({ symbol, onSymbolChange }) {

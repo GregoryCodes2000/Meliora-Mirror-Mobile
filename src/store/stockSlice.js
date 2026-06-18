@@ -18,7 +18,7 @@ export const fetchStockData = createAsyncThunk(
   async (tickerArg, { getState, rejectWithValue }) => {
     const { stock } = getState();
     const ticker = tickerArg || stock.selectedTicker || "AAPL";
-    const API_KEY = "d6s9kjhr01qj447arfd0d6s9kjhr01qj447arfdg"; // <-- put your key here
+    const API_KEY = "d6s9kjhr01qj447arfd0d6s9kjhr01qj447arfdg";
 
     try {
       const res = await fetch(

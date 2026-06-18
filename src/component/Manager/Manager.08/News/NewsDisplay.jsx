@@ -26,7 +26,7 @@ const NewsDisplay = () => {
 
   const fetchNews = async () => {
     try {
-      const res = await fetch("http://localhost:4006/news");
+      const res = await fetch("/.netlify/functions/news");
       const data = await res.json();
 
       if (data.articles?.length) {

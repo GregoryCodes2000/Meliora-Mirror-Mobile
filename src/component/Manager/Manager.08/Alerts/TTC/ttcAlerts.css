@@ -75,3 +75,10 @@
     color: #fff;
     margin-bottom: 1rem;
   }
+
+  .ttc-icon {
+    width: 70px;
+    height: auto;
+  /*   margin-bottom: 0.5rem; */
+    /* scale:50%; */
+  }
