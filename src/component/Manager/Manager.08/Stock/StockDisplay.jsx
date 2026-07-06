@@ -8,29 +8,25 @@ export default function StockDisplay({ symbol }) {
 
   const load = async () => {
     if (!symbol) return;
-
+  
     try {
       setLoading(true);
       setError(null);
-
-      const API_KEY = "d6s9kjhr01qj447arfd0d6s9kjhr01qj447arfdg";
+  
       const res = await fetch(
-        `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`
+        `/.netlify/functions/stock?symbol=${symbol}`
       );
-
+  
       const json = await res.json();
-
-      if (!json.c) throw new Error("Invalid stock symbol or API limit reached");
-
-      // Build a fake sparkline (Finnhub does not give history in /quote)
-      const fakeSeries = Array.from({ length: 15 }, () =>
-        json.c + (Math.random() - 0.5) * 1.5
-      );
-
+  
+      if (!json.quote?.c)
+        throw new Error("No stock data");
+  
       setData({
-        price: json.c,
-        change: json.d,
-        series: fakeSeries,
+        price: json.quote.c,
+        change: json.quote.d,
+        percent: json.quote.dp,
+        candles: json.candles,
       });
     } catch (err) {
       setError(err.message);
@@ -53,20 +49,16 @@ export default function StockDisplay({ symbol }) {
   if (error) return <div className="stock-card">Error: {error}</div>;
   if (!data) return <div className="stock-card">--</div>;
 
-  // Sparkline
-  const min = Math.min(...data.series);
-  const max = Math.max(...data.series);
-
-  const points = data.series
-    .map((p, i) => {
-      const x = (i / (data.series.length - 1)) * 120;
-      const y = max === min ? 20 : 40 - ((p - min) / (max - min)) * 40;
-      return `${x},${y}`;
-    })
-    .join(" ");
-
   const isUp = data.change >= 0;
-  const color = isUp ? "#2ecc71" : "#ff4d4d";
+const color = isUp ? "#2ecc71" : "#ff4d4d";
+const candles = data.candles || [];
+const recent = candles.slice(-10);
+
+console.log(candles);
+
+  
+
+ 
 
   return (
     <div className="stock-card">
@@ -74,14 +66,75 @@ export default function StockDisplay({ symbol }) {
         <div className="stock-symbol">{symbol}</div>
         <div className="stock-price">{data.price.toFixed(2)}</div>
         <div className={`stock-change ${isUp ? "green" : "red"}`}>
-          {isUp ? "+" : ""}
-          {data.change.toFixed(2)}
-        </div>
+      {isUp ? "▲" : "▼"}{" "}
+      {isUp ? "+" : ""}
+      {data.change.toFixed(2)}
+    </div>
       </div>
 
       <svg className="stock-chart" viewBox="0 0 120 40">
-        <polyline fill="none" stroke={color} strokeWidth="3" points={points} />
-      </svg>
+  {recent.length === 0 ? (
+    <text
+      x="60"
+      y="22"
+      fill={color}
+      textAnchor="middle"
+      fontSize="7"
+    >
+      No data
+    </text>
+  ) : (() => {
+      const allPrices = recent.flatMap(c => [
+        c.high,
+        c.low,
+      ]);
+
+      const max = Math.max(...allPrices);
+      const min = Math.min(...allPrices);
+
+      const scaleY = value =>
+        38 - ((value - min) / (max - min || 1)) * 34;
+
+      return recent.map((candle, i) => {
+        const candleWidth = 5;
+const spacing = 100 / recent.length;
+
+const x = i * spacing + spacing / 2;
+
+        const candleColor =
+          candle.close >= candle.open
+            ? "#2ecc71"
+            : "#ff4d4d";
+
+        return (
+          <g key={i}>
+            {/* Wick */}
+            <line
+              x1={x}
+              x2={x}
+              y1={scaleY(candle.high)}
+              y2={scaleY(candle.low)}
+              stroke={candleColor}
+              strokeWidth="1"
+            />
+
+            {/* Body */}
+            <rect
+  x={x - candleWidth / 2}
+  y={Math.min(scaleY(candle.open), scaleY(candle.close))}
+  width={candleWidth}
+  height={Math.max(
+    1,
+    Math.abs(scaleY(candle.open) - scaleY(candle.close))
+  )}
+  fill={candleColor}
+/>
+          </g>
+        );
+      });
+    })()}
+</svg>
+      
     </div>
   );
 }

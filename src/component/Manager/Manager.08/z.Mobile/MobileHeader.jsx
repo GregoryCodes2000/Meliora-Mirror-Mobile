@@ -55,7 +55,7 @@ const MobileHeader = ({ hamburgerOpen, setHamburgerOpen, theme, setTheme }) => {
           </div>
 
           <div>
-            <MobileTheme theme={theme} setTheme={setTheme} />
+          <MobileTheme />
           </div>
         </div>
       </div>

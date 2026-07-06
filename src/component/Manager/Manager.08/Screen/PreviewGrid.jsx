@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useSelector } from "react-redux";
 import "./preview_grid.css";
 import TimeDisplay from "../Clock/TimeDisplay";
 import Calendar from "../Calendar/Calendar";
@@ -74,12 +75,14 @@ const PreviewGrid = ({
   while (paddedGrid.length < totalSquares) {
     paddedGrid.push("");
   }
-
-
-
   while (paddedGrid.length < totalSquares) {
     paddedGrid.push("");
   }
+
+  const timeZone = useSelector((state) => state.clock.timeZone);
+const is24Hour = useSelector((state) => state.clock.is24Hour);
+const timeColor = useSelector((state) => state.clock.timeColor);
+
   return (
     <div className="preview-container" onDragOver={handleDragOver}>
       <div className={`preview-window ${orientation}`}>
@@ -87,7 +90,9 @@ const PreviewGrid = ({
           
           <div
             className={`preview-square ${
-              content === "forecast" || content === "calendar" || content === "ttc"
+              content === "ttc"
+    ? "xlarge-item"
+             : content === "forecast" || content === "calendar"
                 ? "large-item"
                 : content === "newsfeed"
                 ? "long-item"
@@ -113,11 +118,11 @@ const PreviewGrid = ({
                {content === "clock" ? (
   <div className="clock-preview">
     <TimeDisplay
-      timeZone="UTC"
-      /* is24Hour={true} */
-      timeColor="#ffffff"
-      showBorder={false}
-    />
+  timeZone={timeZone}
+  is24Hour={is24Hour}
+  timeColor={timeColor}
+  showBorder={false}
+/>
   </div>
 
 ) : content === "calendar" ? (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import TtcAlerts from "../Alerts/TTC/TtcAlerts";
 import Calendar from "../Calendar/Calendar";
 import TimeDisplay from "../Clock/TimeDisplay";
@@ -65,6 +66,9 @@ const ToggleSwitches = ({
   );
 
   const [showWeatherPage, setShowWeatherPage] = useState(false);
+  const timeZone = useSelector((state) => state.clock.timeZone);
+const is24Hour = useSelector((state) => state.clock.is24Hour);
+const timeColor = useSelector((state) => state.clock.timeColor);
 
   const renderModule = (item) => (
     <div className="toggle-switch-group box-shadowed" key={item}>
@@ -81,8 +85,10 @@ const ToggleSwitches = ({
         </label>
 
         <span className="toggle-label">
-          {item.charAt(0).toUpperCase() + item.slice(1)}
-        </span>
+  {item === "ttc"
+    ? "TTC Alerts"
+    : item.charAt(0).toUpperCase() + item.slice(1)}
+</span>
 
         <div className="arrow-div">
           <span
@@ -98,7 +104,11 @@ const ToggleSwitches = ({
           <div className={`img-section ${item}-bottom`}>
             {item === "clock" ? (
               <div className="time-switch">
-                <TimeDisplay is24Hour={true} />
+                <TimeDisplay
+  timeZone={timeZone}
+  is24Hour={is24Hour}
+  timeColor={timeColor}
+/>
                 <button className="clock-settings-btn">
                   <Link to="/clock">
                     <img src={settingsImage} />

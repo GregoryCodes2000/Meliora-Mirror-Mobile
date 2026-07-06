@@ -25,6 +25,7 @@
       height:7rem;
       scale:75%;
       margin-top: -0.5rem;
+
       }
   }
   
@@ -73,4 +74,29 @@
     color: #ff5252;
   }
 
-  
+  .stock-change{
+    margin-top:0px;
+    font-size:25px;
+    font-weight:700;
+    
+    display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  /* font-size: 0.8rem;
+  font-weight: 600; */
+  white-space: nowrap;
+}
+
+.green{
+  color:#2ecc71;
+}
+
+.red{
+  color:#ff4d4d;
+}
+
+.stock-chart{
+  scale: 150%;
+  gap:0;
+}

@@ -3,6 +3,7 @@
     background: #fdd835; /* TTC yellow */
     padding: 14px;
     box-sizing: border-box;
+    overflow: hidden;
   }
   
   .ttc-card {
@@ -13,6 +14,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
     line-height: 1.45;
     color: #333;
+
   }
   
   .ttc-heading {
@@ -79,6 +81,93 @@
   .ttc-icon {
     width: 70px;
     height: auto;
+    margin-top: -5px;
   /*   margin-bottom: 0.5rem; */
     /* scale:50%; */
+  }
+
+  .ttc-line-badge {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+  
+    display: inline-flex;
+    /* align-items: center;
+    justify-content: center; */
+  
+    color: white;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+  
+  .ttc-title {
+    display: flex;
+  align-items: flex-start; /* instead of center */
+  gap: 0rem;
+  line-height: 1.2;
+  }
+
+  .ttc-line-badge {
+    display: inline-flex;
+    
+    color: white;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  
+  /* Subway circles */
+  .ttc-line-badge.subway {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    border:none;
+    padding: 2px;
+    color:black;
+    margin:0px 10px 0px 5px;
+    /* gap:50px; */
+  }
+  
+  /* Streetcar squares */
+  .ttc-line-badge.streetcar {
+    min-width: 2rem;
+    height: 1.5rem;
+    border-radius: 6px;
+    background: #d71920; /* TTC red */
+    padding: 0 0.25rem;
+    border: none;
+  }
+
+  .ttc-container {
+    overflow: hidden;
+    margin-top: 0px;
+  
+    mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 80%,
+      transparent 100%
+    );
+  
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 80%,
+      transparent 100%
+    );
+  }
+
+  .ttc-header {
+    display: flex;
+    flex-direction: column;
+    
+    margin-bottom: 5px;
+  }
+
+  .ttc-divider {
+    width: 100%;
+    height: 1px;
+    margin-top: 1px;
+    background: white;
   }

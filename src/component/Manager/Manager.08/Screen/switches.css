@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+
 /*--------------------------- Toggle Switches ------------------------------*/
 
 .checkbox-wrapper {
@@ -79,7 +81,7 @@ body.dark .toggle-switch-group {
   margin-bottom: 5px;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+
 
 .toggle-label {
   font-size: 2rem;
@@ -426,12 +428,12 @@ body.dark .newsfeed-switch {
   background: #000000;
   color: white;
   border-radius: 8px;
-  margin-top: 5.5rem;
+  margin-top: 10.5rem;
   scale: 90%;
 
   padding: 12px;
   width: 15rem;
-  height: 10rem;
+  height: 15rem;
   border-radius: 11px;
   padding: 15px;
   box-shadow: -2px -2px 2px 2px #818181, 2px 2px 2px 2px #ffffff;
@@ -440,7 +442,7 @@ display: flex;
 }
 
 .img-section.ttc-bottom {
-  margin-bottom: 5.5rem;;
+  margin-bottom: 10.5rem;;
 }
 
 body.dark .ttc-switch {
@@ -944,7 +946,7 @@ body.dark .stock-switch {
 .ttc-switch {
   background: #000000;
   border-radius: 8px;
-  margin-top: 4.5rem;
+  margin-top: 8rem;
   scale: 100%;
   padding: 5px;
   padding: 12px;
@@ -958,11 +960,15 @@ body.dark .stock-switch {
   
 }
 .img-section.ttc-bottom {
-  margin-bottom: 3.5rem;;
+  margin-bottom: 7rem;;
 }
 
 body.dark .ttc-switch {
   box-shadow: -2px -2px 2px 2px #4b4b4b, 2px 2px 2px 2px #6c6c6c;
+}
+
+.toggle-label {
+  font-size: 1.15rem;
 }
 
 .stock-switch {

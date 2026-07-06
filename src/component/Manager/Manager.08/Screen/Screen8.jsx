@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setGridLayout } from "../../../../store/persisted/gridSlice";
 import "../../Manager.08/Screen/screen8.css";
 import SearchBar from "../y.Search_Bar/SearchBar";
 import PrevControls from "./PrevControls";
@@ -9,16 +11,31 @@ import ToggleSwitches from "./Switches";
 import Zoom from "./Zoom/Zoom";
 
 const Manager8 = () => {
-  const [options, setOptions] = useState({
-    clock: true, //default ON
+  const savedOptions = useSelector(
+    (state) => state.switches.options
+  );
+  const defaultOptions = {
+    clock: true,
     weather: true,
     calendar: true,
-    forecast:true,
-    praise: true,
+    forecast: true,
+    praise: false,
     newsfeed: true,
-    ttc: false,
-  stock: false,
-  });
+    ttc: true,
+    stock: false,
+  };
+  
+  const [options, setOptions] = useState(
+    Object.keys(savedOptions || {}).length
+      ? savedOptions
+      : defaultOptions
+  );
+
+  const dispatch = useDispatch();
+
+const savedLayout = useSelector(
+  (state) => state.screen.layout
+);
 
   const [showImageSection, setShowImageSection] = useState({
     clock: false,
@@ -42,16 +59,22 @@ const Manager8 = () => {
     });
   }, []);
 
-  const [gridContent, setGridContent] = useState(() => {
+  const defaultGrid = () => {
     const grid = Array(42).fill(null);
+  
     grid[0] = "clock";
     grid[2] = "weather";
     grid[3] = "calendar";
     grid[5] = "forecast";
-    grid[20] = "praise";
+    grid[7] = "ttc";
     grid[26] = "newsfeed";
+  
     return grid;
-  });
+  };
+  
+  const [gridContent, setGridContent] = useState(
+    savedLayout?.length ? savedLayout : defaultGrid()
+  );
   const [orientation, setOrientation] = useState("vertical");
 
   const handleToggleChange = (event) => {
@@ -198,9 +221,9 @@ const Manager8 = () => {
       weather: true,
       calendar: true,
       forecast: true,
-      praise: true,
+      praise: false,
       newsfeed: true,
-      ttc: false,
+      ttc: true,
       stock: false,
     });
 
@@ -211,7 +234,7 @@ const Manager8 = () => {
       grid[2] = "weather";
       grid[3] = "calendar";
       grid[5] = "forecast";
-      grid[20] = "praise";
+      grid[7] = "ttc";
       grid[26] = "newsfeed";
 
       return grid;
@@ -331,7 +354,12 @@ const Manager8 = () => {
           }
         </div>
         <div className="savebutton-mobile">
-          <SaveButton />
+        <SaveButton
+    gridContent={gridContent}
+    options={options}
+    orientation={orientation}
+    stockModules={stockModules}
+/>
         </div>
       </div>
     </div>
