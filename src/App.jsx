@@ -6,6 +6,7 @@
 import { Route, Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "./App.css";
 
 import Clock from "./component/Manager/Manager.08/Clock/Clock";
@@ -20,8 +21,8 @@ import Profile from "./component/Manager/Manager.08/Profile/Profile";
 import { Navigate } from "react-router-dom";
 
 function App() {
-  const [theme, setTheme] = useState("light");
-  const [showSidebar, setShowSidebar] = useState(false);
+  const theme = useSelector((state) => state.theme.theme);
+    const [showSidebar, setShowSidebar] = useState(false);
   const [showModules, setShowModules] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -49,7 +50,7 @@ function App() {
             setSidebarOpen={setSidebarOpen}
             setHamburgerOpen={setHamburgerOpen} 
           />
-          <ThemeMode theme={theme} setTheme={setTheme} />
+          <ThemeMode />
         </div>
 
        
@@ -68,7 +69,7 @@ function App() {
               
             <Route path="/profile" element={<Profile />} />
               <Route path="/screen" element={<Manager8 />} />
-              <Route path="/clock" element={<Clock theme={theme} />} />
+              <Route path="/clock" element={<Clock />} />
               <Route path="/weather" element={<Weather />} />
             </Routes>
           </div>
@@ -77,8 +78,8 @@ function App() {
         <MobileHeader
         hamburgerOpen={hamburgerOpen}
         setHamburgerOpen={setHamburgerOpen}
-        theme={theme}
-   setTheme={setTheme} />
+        /* theme={theme}
+   setTheme={setTheme} */ />
    
       </div>
     </BrowserRouter>

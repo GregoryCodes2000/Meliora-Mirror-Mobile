@@ -1,7 +1,16 @@
 import React, { useEffect } from "react";
 import "./theme_mode.css";
 
-const ThemeMode = ({ theme, setTheme }) => {
+import { useSelector, useDispatch } from "react-redux";
+import { setTheme } from "../../../../store/persisted/themeSlice";
+
+const ThemeMode = () => {
+  const dispatch = useDispatch();
+
+  const theme = useSelector(
+    (state) => state.theme.theme
+  );
+
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
@@ -10,13 +19,14 @@ const ThemeMode = ({ theme, setTheme }) => {
     <div className="theme_mode">
       <button
         className={`theme-button ${theme === "light" ? "active" : ""}`}
-        onClick={() => setTheme("light")}
+        onClick={() => dispatch(setTheme("light"))}
       >
         light
       </button>
+
       <button
         className={`theme-button ${theme === "dark" ? "active" : ""}`}
-        onClick={() => setTheme("dark")}
+        onClick={() => dispatch(setTheme("dark"))}
       >
         dark
       </button>
@@ -24,4 +34,4 @@ const ThemeMode = ({ theme, setTheme }) => {
   );
 };
 
-export default ThemeMode; 
+export default ThemeMode;

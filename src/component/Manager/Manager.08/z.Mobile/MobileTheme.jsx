@@ -18,7 +18,12 @@ const MobileTheme = () => {
     document.body.className = theme;
   }, [theme]);
 
+  useEffect(() => {
+    console.log("Redux theme changed:", theme);
+  }, [theme]);
+
   const toggleTheme = () => {
+    console.log("clicked");
     dispatch(
       setTheme(theme === "light" ? "dark" : "light")
     );

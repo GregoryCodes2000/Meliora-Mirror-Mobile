@@ -1,5 +1,5 @@
 import "./saveButton.css";
-import saveImage from "./../../../../../assets/save_img.png";
+import saveImage from "./../../../../../assets/save_img2.png";
 
 import { useDispatch } from "react-redux";
 import { setGridLayout } from "../../../../../store/persisted/gridSlice";

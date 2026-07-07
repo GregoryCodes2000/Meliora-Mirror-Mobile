@@ -18,25 +18,26 @@ export const fetchStockData = createAsyncThunk(
   async (tickerArg, { getState, rejectWithValue }) => {
     const { stock } = getState();
     const ticker = tickerArg || stock.selectedTicker || "AAPL";
-    const API_KEY = "d6s9kjhr01qj447arfd0d6s9kjhr01qj447arfdg";
+    const API_KEY = process.env.FINNHUB_API_KEY;
 
     try {
       const res = await fetch(
-        `https://finnhub.io/api/v1/quote?symbol=${ticker}&token=${API_KEY}`
+        `/.netlify/functions/stock?symbol=${ticker}`
       );
+      
       const data = await res.json();
 
-      if (!data || data.c === undefined) {
+      if (!data.quote || data.quote.c === undefined) {
         return rejectWithValue("No data from API");
       }
 
       // Mock series for sparkline (30 points around current price)
-      const series = Array.from({ length: 30 }, (_, i) => data.c - Math.random());
+      /* const series = Array.from({ length: 30 }, (_, i) => data.c - Math.random()); */
 
       return {
-        price: data.c,
-        change: data.c - data.pc,
-        series,
+        price: data.quote.c,
+        change: data.quote.c - data.quote.pc,
+        series: data.candles,
         timestamp: Date.now(),
         symbol: ticker,
       };

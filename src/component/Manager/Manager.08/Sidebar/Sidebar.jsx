@@ -18,8 +18,8 @@ const Sidebar = ({ isMobile  }) => {
     setIsSettingsOpen(!isSettingsOpen);
   };
 
-  const [theme, setTheme] = useState("light");
- 
+/*   const [theme, setTheme] = useState("light");
+ */ 
  
   
 

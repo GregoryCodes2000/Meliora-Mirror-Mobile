@@ -9,7 +9,7 @@ import logo from "../../../../assets/mobile_logo.png";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
-const MobileHeader = ({ hamburgerOpen, setHamburgerOpen, theme, setTheme }) => {
+const MobileHeader = ({ hamburgerOpen, setHamburgerOpen/* , theme, setTheme */ }) => {
   const navigate = useNavigate();
   const isMobile = window.innerWidth < 768;
   /* const theme = "light"; */
@@ -29,7 +29,7 @@ const MobileHeader = ({ hamburgerOpen, setHamburgerOpen, theme, setTheme }) => {
         {hamburgerOpen && (
           <div className="mobile-sidebar">
             <Sidebar isMobile={isMobile} />
-            <ThemeMode theme={theme} setTheme={setTheme} />
+            <ThemeMode />
           </div>
         )}
 
